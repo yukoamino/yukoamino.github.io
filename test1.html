@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>test1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+.body{
+	width: 1200px;
+	height: 1500px;
+	text-align: center;
+	margin: auto;
+	background: #ccc
+}
+.fixedlink{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+.fixedlink a{
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+</style>
+</head>
+<body>
+<div class="body">body</div>
+<div class="fixedlink"><a href="#">fixed link</a></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+// $(function(){
+// 	var flg = 1;
+//   $(window).scroll(function (){
+//     $('.fixedlink').each(function(){
+//       var scroll = $(window).scrollTop();
+//       if (scroll > 200){
+//       	if(flg == 1){
+// 	        $(this).stop().animate({
+// 	          "opacity": "0"
+// 	        }, 500, function(){
+// 	        	flg = 0;
+// 	        });
+//       	}
+//       }else{
+//       	if(flg == 0){
+// 	        $(this).stop().animate({
+// 	          "opacity": "1"
+// 	        }, 500, function(){
+// 	        	flg = 1;
+// 	        });
+//       	}
+//       }
+//     });
+//   });
+// });
+
+
+$(function(){
+	var timer = null;
+	$(window).on('scroll',function() {
+		clearTimeout( timer );
+		timer = setTimeout(function() {
+			var flg = 1;
+		  $(window).scroll(function (){
+		    $('.fixedlink').each(function(){
+		      var scroll = $(window).scrollTop();
+		      if (scroll > 200){
+		      	if(flg == 1){
+			        $(this).stop().animate({
+			          "opacity": "0"
+			        }, 500, function(){
+			        	flg = 0;
+			        	//$(this).hide();
+			        	$(this).css({left:'-100px'});
+			        });
+		      	}
+		      }else{
+		      	if(flg == 0){
+			        $(this).stop().animate({
+			          "opacity": "1"
+			        }, 500, function(){
+			        	flg = 1;
+			        	//$(this).show();
+			        	$(this).css({left:'0px'});
+			        });
+		      	}
+		      }
+		    });
+		  });
+		}, 300 );
+	});
+});
+</script>
+</body>
+</html>
