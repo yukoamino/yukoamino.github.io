@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>structured-data</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header>header</header>
+<main role="main">
+	<div class="container">
+
+		<section class="main-section">
+			<h1>構造化データ</h1>
+			<p class="main-lead">構造化データについてまとめました。今後活用していきたいと思います。</p>
+		</section>
+		
+		<section class="about-section">
+			<h2>構造化データとは</h2>
+			<p>構造化データとは、HTMLで書かれた情報が何を意味するのかを、検索エンジンやその他のクローラーに理解できるようタグ付けしたものです。<br>
+			ロボットがそのもつ内容の解釈を容易にし、検索エンジンはより有用な検索結果をユーザーに提供できるようになります。</p>
+			
+			<h2>記述方法</h2>
+			<p>構造化マークアップはHTMLに直接記述します。<br>
+			ボキャブラリーとシンタックスというものを使います。<br>
+			ボキャブラリーはマークアップする物事を定義するもの、シンタックスはそのマークアップの記述方式のことです。</p>
+			
+			<h3>ボキャブラリー</h3>
+			<ul class="c-list">
+				<li>data-vocabulary.org</li>
+				<li>schema.org</li>
+			</ul>
+			<p>data-vocabulary.orgはその機能をschema.orgに引き継いでおり、schema.org一択でよいかと思います。</p>
+			
+			<h3>シンタックス</h3>
+			<ul class="c-list">
+				<li>microdata</li>
+				<li>RDFa</li>
+				<li>JSON-LD</li>
+			</ul>
+			<p>それぞれの特徴を下のような構造のマークアップを例に説明します。</p>
+<textarea name="" id="" cols="30" rows="10">
+<dl>
+<dt>社名</dt>
+<dd>株式会社アイ・エム・ジェイ</dd>
+<dt>役員</dt>
+<dd>
+取締役社長 兼 CEO:竹内 真二<br>
+執行役員:久田 祐通
+</dd>
+<dt>所在地</dt>
+<dd>〒108-0073 東京都港区三田1-4-1 住友不動産麻布十番ビル 9F</dd>
+<dt>URL</dt>
+<dd><a href="https://www.imjp.co.jp/" target="_blank">https://www.imjp.co.jp/</a></dd>
+</dl>
+</textarea>
+		</section>
+		
+		<section class="detail-section">
+			<div class="detail-item">
+				<h4>microdata</h4>
+				<p class="detail-lead">HTML5に独立した仕様で、HTML5でのみ用いることができます。<br>
+				W3Cの勧告は2013年10月で止まっているため、今後のことを考えるとRDFaやJSON-LDを選択したほうがよいかもしれません。</p>
+<textarea name="" id="" cols="30" rows="10">
+<dl itemscope itemtype="http://schema.org/Corporation">
+<dt>社名</dt>
+<dd><span itemprop="name">株式会社アイ・エム・ジェイ</span></dd>
+<dt>役員</dt>
+<dd>
+取締役社長 兼 CEO:<span itemprop="employee">竹内 真二</span><br>
+執行役員:<span itemprop="employee">久田 祐通</span>
+</dd>
+<dt>所在地</dt>
+<dd>
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+〒<span itemprop="postalCode">108-0073</span> 
+<span itemprop="addressRegion">東京都</span>
+<span itemprop="addressLocality">港区</span>
+<span itemprop="streetAddress">三田1-4-1 住友不動産麻布十番ビル 9F</span>
+</span>
+</dd>
+<dt>URL</dt>
+<dd>
+<a href="https://www.imjp.co.jp/" target="_blank">
+<span itemprop="URL">https://www.imjp.co.jp/</span>
+</a>
+</dd>
+</dl>
+</textarea>
+				<ul class="detail-feature c-list">
+					<li>HTMLタグに記述する</li>
+					<li>HTMLタグに直接マークアップするためHTMLがごちゃごちゃしてしまう</li>
+				</ul>
+			</div><!-- /.detail-item -->
+			
+			<div class="detail-item">
+				<h4>RDFa</h4>
+				<p class="detail-lead">HTML5に加えて、XHTMLなどより広い言語で使用することができます。<br>
+				また、W3Cの推奨となっています。</p>
+<textarea name="" id="" cols="30" rows="10">
+<dl vocab="http://schema.org/" typeof="Corporation">
+<dt>社名</dt>
+<dd><span property="name">株式会社アイ・エム・ジェイ</span></dd>
+<dt>役員</dt>
+<dd>
+取締役社長 兼 CEO:<span property="employee">竹内 真二</span><br>
+執行役員:<span property="employee">久田 祐通</span>
+</dd>
+<dt>所在地</dt>
+<dd>
+<span property="address" typeof="PostalAddress">
+〒<span property="postalCode">108-0073</span> 
+<span property="addressRegion">東京都</span>
+<span property="addressLocality">港区</span>
+<span property="streetAddress">三田1-4-1 住友不動産麻布十番ビル 9F</span>
+</span>
+</dd>
+<dt>URL</dt>
+<dd>
+<a href="https://www.imjp.co.jp/" target="_blank">
+<span property="URL">https://www.imjp.co.jp/</span>
+</a>
+</dd>
+</dl>
+</textarea>
+				<ul class="detail-feature c-list">
+					<li>HTMLタグに記述する</li>
+					<li>HTMLタグに直接マークアップするためHTMLがごちゃごちゃしてしまう</li>
+				</ul>
+			</div><!-- /.detail-item -->
+			
+			<div class="detail-item">
+				<h4>JSON-LD</h4>
+				<p class="detail-lead">表示されるテキストとマークアップは別々に記述します。</p>
+<textarea name="" id="" cols="30" rows="10">
+<dl>
+<dt>社名</dt>
+<dd>株式会社アイ・エム・ジェイ</dd>
+<dt>役員</dt>
+<dd>
+取締役社長 兼 CEO:竹内 真二<br>
+執行役員:久田 祐通
+</dd>
+<dt>所在地</dt>
+<dd>〒108-0073 東京都港区三田1-4-1 住友不動産麻布十番ビル 9F</dd>
+<dt>URL</dt>
+<dd><a href="https://www.imjp.co.jp/" target="_blank">https://www.imjp.co.jp/</a></dd>
+</dl>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Corporation",
+  "name": "株式会社アイ・エム・ジェイ",
+  "employee" : [
+    {
+      "@type" : "Person",
+      "name" : "竹内 真二"
+    },
+    {
+      "@type" : "Person",
+      "name" : "久田 祐通"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode" : "108-0073",
+    "addressRegion": "東京都",
+    "addressLocality": "港区",
+    "streetAddress": "三田1-4-1 住友不動産麻布十番ビル 9F"
+  },
+  "URL": "https://www.imjp.co.jp/"
+}
+</script>
+</textarea>
+				<ul class="detail-feature c-list">
+					<li>scriptタグの中に記述する</li>
+					<li>HTMLを汚す必要がないので見やすい</li>
+					<li>ファイルサイズが大きくなってしまう</li>
+					<li>表示されるテキストと別の場所に記述するため更新漏れするなど、それらの内容が異なってしまう場合がある</li>
+				</ul>
+			</div><!-- /.detail-item -->
+		</section>
+
+	</div>
+</main>
+<footer>footer</footer>
+</body>
+</html>
