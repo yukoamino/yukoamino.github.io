@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.p-about{
+	background: #fff;
+	padding: 20px;
+	margin-top: 50px;
+	@include clearfix();
+}
+
+.p-about__img{
+	float: left;
+}
+
+.p-about__txt{
+	float: right;
+	width: 590px;
+}

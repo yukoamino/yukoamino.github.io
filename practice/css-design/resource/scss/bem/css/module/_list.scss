@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.listbtn{
+	font-size: 0;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.listbtn__item{
+	display: inline-block;
+	margin-left: 30px;
+	
+	&:first-child{
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>css-design</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header class="l-header">header</header>
+<main role="main">
+	<div class="l-container">
+
+		<section>
+			<h1 class="heading heading-lv1">CSS設計</h1>
+			<p class="mainlead">CSS設計についてまとめました。4つのCSS設計の特徴を比較しています。</p>
+			
+			<h2 class="heading heading-lv2">OOCSS</h2>
+			<p>OOCSS（Object Oriented CSS）は、オブジェクト指向にもとづいて考案された設計思想。<br>
+			TwitterやGitHubなどで採用されており、身近なところでいうとBootstrapがこの思想のもとに設計されている。</p>
+			<h3 class="heading heading-lv3">特徴</h3>
+			<ul class="list">
+				<li class="list-item">
+					Container（入れ物）とContents（中身）を分けて考える
+					<ul class="list">
+						<li class="list-item">.container > .contentsのように依存関係にせず、.containerと.contentsを独立させる（再利用性が向上）</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Structure（基本構造）とSkin（見た目）を分けて考える
+					<ul class="list">
+						<li class="list-item">.btnで基本構造を定義し、.btn-primaryで見た目を変更する</li>
+					</ul>
+				</li>
+			</ul>
+			
+			<h2 class="heading heading-lv2">BEM</h2>
+			<p>BEM（Block Element Modifier）は、独特な命名規則（MindBEMding）で有名な設計思想。<br>
+			OOCSSはマルチクラス（クラスを組み合わせて使う）のに対し、BEMはシングルクラス（ひとつのクラスで定義する）なのでメンテがしやすい。</p>
+			<h3 class="heading heading-lv3">特徴</h3>
+			<ul class="list">
+				<li class="list-item">
+					Block
+					<ul class="list">
+						<li class="list-item">もととなる要素</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Element
+					<ul class="list">
+						<li class="list-item">Block内にある子要素</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Modifier
+					<ul class="list">
+						<li class="list-item">変化した状態を表す要素</li>
+					</ul>
+				</li>
+			</ul>
+			<p>3つをBlock__Element--Modifierのように結合してクラス名を決める。<br>
+			Elementはアンダースコア2つ（__）で結合、Modifierはダッシュ2つ（--）で結合する。</p>
+			
+			<h2 class="heading heading-lv2">SMACSS</h2>
+			<p>SMACSS（Scalable and Modular Architecture for CSS）は、OOCSSやBEMの流れをうけて考案された設計思想。</p>
+			<h3 class="heading heading-lv3">特徴</h3>
+			<ul class="list">
+				<li class="list-item">
+					Base
+					<ul class="list">
+						<li class="list-item">reset.cssやnormalize.css</li>
+						<li class="list-item">サイト全体のデフォルトスタイルを定義する</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Layout
+					<ul class="list">
+						<li class="list-item">Moduleの配置を決める</li>
+						<li class="list-item">プレフィックスに「l-」をつける（例: .l-main、.l-sub）</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Module
+					<ul class="list">
+						<li class="list-item">再利用可能なパーツ</li>
+						<li class="list-item">親モジュールの名前をプレフィックスにつける（例: 親: .item、子: .item-box）</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					State
+					<ul class="list">
+						<li class="list-item">LayoutやModuleの変化した状態</li>
+						<li class="list-item">プレフィックスに「is-」をつける（例: .is-active、.is-error）</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Theme
+					<ul class="list">
+						<li class="list-item">LayoutやModuleのTheme（色を管理する）</li>
+						<li class="list-item">プレフィックスに「theme-」をつける（例: .theme-color）</li>
+					</ul>
+				</li>
+			</ul>
+			
+			<h2 class="heading heading-lv2">FLOCSS</h2>
+			<p>FLOCSS（Foundation Layout Object CSS）は、OOCSSやBEM、SMACSSの流れを受けて考案された設計思想。</p>
+			<h3 class="heading heading-lv3">特徴</h3>
+			<ul class="list">
+				<li class="list-item">
+					Foundation
+					<ul class="list">
+						<li class="list-item">reset.cssやnormalize.css</li>
+						<li class="list-item">サイト全体のデフォルトスタイルを定義する</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Layout
+					<ul class="list">
+						<li class="list-item">Objectの配置を決める</li>
+						<li class="list-item">ページ単位で唯一の存在になるのでidセレクタを使う</li>
+					</ul>
+				</li>
+				<li class="list-item">
+					Object
+					<ul class="list">
+						<li class="list-item">
+							Component
+							<ul class="list">
+								<li class="list-item">再利用可能なパーツ</li>
+								<li class="list-item">プレフィックスに「c-」をつける（例: .c-btn、.c-btn_primary）</li>
+							</ul>
+						</li>
+						<li class="list-item">
+							Project
+							<ul class="list">
+								<li class="list-item">Componentにするほどでもないパーツ</li>
+								<li class="list-item">プレフィックスに「p-」をつける（例: .p-article、p.article__title）</li>
+							</ul>
+						</li>
+						<li class="list-item">
+							Utility
+							<ul class="list">
+								<li class="list-item">汎用クラスで単一のスタイルを持つ</li>
+								<li class="list-item">プレフィックスに「u-」をつける（例: .u-clearfix、.u-block）</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<p>BEMとおなじMindBEMdingという命名規則が用いられている。<br>
+			また、ディレクトリ構成も構造に合わせて分割することで、メンテしやすくなっている。</p>
+			
+			<h2 class="heading heading-lv2">サンプルページ</h2>
+			<p>それぞれの設計でサンプルページを作成しました。</p>
+			<ul class="list">
+				<li class="list-item"><a href="./oocss/index.html" class="link">OOCSS</a></li>
+				<li class="list-item"><a href="./bem/index.html" class="link">BEM</a></li>
+				<li class="list-item"><a href="./smacss/index.html" class="link">SMACSS</a></li>
+				<li class="list-item"><a href="./flocss/index.html" class="link">FLOCSS</a></li>
+			</ul>
+		</section>
+
+	</div>
+</main>
+<footer class="l-footer">footer</footer>
+</body>
+</html>

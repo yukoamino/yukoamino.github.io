@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.link{
+	color: #003f98;
+	
+	&:hover{
+		text-decoration: underline;
+	}
+}
