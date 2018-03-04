@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>squeeze</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header class="l-header">header</header>
+<main role="main">
+	<div class="l-container">
+
+		<section>
+			<h1 class="heading heading-lv1">コンテンツの絞り込み</h1>
+
+			<form action="">
+				<div class="squeeze-area">
+					<div class="squeeze-select js-squeeze-select">
+						<select name="category">
+							<option value="">絞り込みをしてください</option>
+							<option value="red">赤</option>
+							<option value="blue">青</option>
+							<option value="green">緑</option>
+						</select>
+					</div>
+					<div class="squeeze-list js-squeeze-list">
+						<ul>
+							<li data-category="red">1</li>
+							<li data-category="green">2</li>
+							<li data-category="blue">3</li>
+							<li data-category="blue">4</li>
+							<li data-category="red">5</li>
+							<li data-category="green">6</li>
+							<li data-category="red">7</li>
+							<li data-category="blue">8</li>
+							<li data-category="red">9</li>
+							<li data-category="blue">10</li>
+							<li data-category="red">11</li>
+							<li data-category="green">12</li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</section>
+
+	</div>
+</main>
+<footer class="l-footer">footer</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>

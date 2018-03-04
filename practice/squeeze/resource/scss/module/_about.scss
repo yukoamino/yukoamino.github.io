@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.about{
+	background: #fff;
+	padding: 20px;
+	margin-top: 50px;
+	@include clearfix();
+}
+
+.about-img{
+	float: left;
+}
+
+.about-txt{
+	float: right;
+	width: 590px;
+}
