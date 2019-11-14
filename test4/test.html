@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>test1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+.body{
+	width: 1200px;
+	height: 1500px;
+	text-align: center;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+<div class="">
+
+<style>
+@keyframes s0_anime {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes s0_end_anime {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill:#010101;
+    stroke-width: 0;
+  }
+}
+@keyframes item_fade_in_anime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.roar .s0 {
+  /* stroke:transparent;
+	fill:transparent;
+	stroke-dasharray: 5000;
+	stroke-dashoffset: 0;
+	stroke-width: 10; */
+}
+.roar.start .s0{
+	stroke:#010101;
+	animation: s0_anime 2s ease-in 0s forwards; 
+}
+.roar.end .s0{
+  stroke-width: 0;
+  animation: s0_end_anime 1s ease-in 0s forwards; 
+}
+.roar .item_fade_in {
+  /* opacity: 0; */
+}
+.roar.end .item_fade_in {
+  animation: item_fade_in_anime 1s ease-in 0s forwards; 
+}
+
+
+
+@keyframes stroke_anime {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill_anime_b {
+  0% {
+    fill: transparent;
+    stroke-width: 0;
+  }
+  100% {
+    fill:#010101;
+  }
+}
+@keyframes fill_anime_r {
+  0% {
+    fill: transparent;
+    stroke-width: 0;
+  }
+  100% {
+    fill: #861b38;
+  }
+}
+@keyframes fill_anime_g {
+  0% {
+    fill: transparent;
+    stroke-width: 0;
+  }
+  100% {
+    fill: #b58e26;
+  }
+}
+@keyframes zoom_anime {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(5);
+  }
+}
+
+.roar .path {
+  stroke:transparent;
+	fill:transparent;
+	stroke-dasharray: 5000;
+	stroke-dashoffset: 0;
+	stroke-width: 4;
+}
+.roar.stroke .path{
+  stroke:#010101;
+	animation: stroke_anime 2s ease-in 0s forwards; 
+}
+.roar.fill .b{
+  animation: fill_anime_b 1s ease-in 0s forwards; 
+}
+.roar.fill .r{
+  animation: fill_anime_r 1s ease-in 0s forwards; 
+}
+.roar.fill .g{
+  animation: fill_anime_g 1s ease-in 0s forwards; 
+}
+.roar.zoom{
+	animation: zoom_anime 1.5s ease-in 4s forwards; 
+}
+
+.roar svg{
+  text-align: center;
+}
+</style>
+
+
+<div class="wrapper">
+
+<div class="roar stroke zoom">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <style>
+      .r {
+        fill: #861b38;
+      }
+      .b {
+        fill: #010101;
+      }
+      .g {
+        fill: #b58e26;
+      }
+    </style>
+  </defs>
+  <title>roar</title>
+  <g>
+    <path class="r thunder path" d="M437-127.89c-26.47,27.51-48.31,57.25-69.2,87.72-11.67,17-23.1,34.22-30.54,53.65a39.21,39.21,0,0,0-2.09,7.17c-1.46,8.37.65,11.9,8.65,14.85q18.94,7,37.91,14c6.53,2.39,7.64,7.6,2.57,12.73a257.73,257.73,0,0,1-22.94,20c-32,25.41-65.36,48.72-101.94,67.13-11.76,5.93-23.9,10.88-36.92,13.36a3.84,3.84,0,0,1-3.11-.27c.7-3.86,3.55-6.59,5.66-9.63,20.33-29.23,40.86-58.32,61.07-87.63,4-5.79,4.15-11.48-1.76-15.67a188.74,188.74,0,0,0-21.77-13.08c-8.11-4.24-16.26-8.41-24.3-12.77-7.37-4-8.59-8.74-4.5-15.93,8-14.12,19.58-25.23,31.41-35.95a499,499,0,0,1,57.05-44.42c18.82-12.64,39.18-22.6,59.22-33.09,13-6.79,25.93-13.6,39.69-18.7A48.07,48.07,0,0,1,437-127.89Z" transform="translate(94 224)"/>
+    <path class="b eye path" d="M378.82,238.16A158,158,0,0,1,379.91,217c.4-3.37,1.51-6.31,4.44-8,13-7.34,26.7-12.7,41.91-13,1.18,0,3-.82,3.44.92.39,1.51-1.25,2.39-2.36,2.82-5.22,2.05-4.5,6.12-4,10.4,1.9,18.2,3.58,36.41,1.72,54.72a43.51,43.51,0,0,1-5,16.09c-3.86,7.25-10,11.1-18.21,10.93s-13.69-4.51-16.95-11.85c-4.7-10.56-5.68-21.81-6.06-33.15C378.74,244.45,378.82,242,378.82,238.16Z" transform="translate(94 224)"/>
+    <path class="b eye path" d="M244,238.83c-.51,13.38-.73,26.4-5.39,38.77-5,13.33-17.31,18.18-28.73,11.55A20.71,20.71,0,0,1,201.3,279a50.5,50.5,0,0,1-4.44-19.32c-.27-16.83.07-33.64,2.3-50.34.58-4.37.4-7.9-4.37-9.73-1-.38-2.42-1.19-2.16-2.46.37-1.83,2.16-1.15,3.36-1.13,15.39.29,29.21,5.7,42.35,13.17a8,8,0,0,1,3.81,6.13C243.39,223.28,243.47,231.27,244,238.83Z" transform="translate(94 224)"/>
+    <path class="b mouth path" d="M311.12,338.45a51.3,51.3,0,0,1-13.25-3.15c-14.34-5.25-27.45-12.59-38.81-22.87-1.77-1.61-4.7-3.57-2.55-6,2-2.26,4.2.47,6,1.76a153.17,153.17,0,0,0,38.13,20.24,30.75,30.75,0,0,0,21.81,0A138.72,138.72,0,0,0,358,309.75c1.34-1,2.64-2,4-2.93s2.69-1.67,4-.3.13,2.73-.57,4a1.48,1.48,0,0,1-.33.38c-15.4,13.75-32.74,23.74-53.31,27.49C311.57,338.43,311.23,338.44,311.12,338.45Z" transform="translate(94 224)"/>
+    <path class="g nose path" d="M311.14,304a26.34,26.34,0,0,1-13.88-3.15c-7.8-4.35-8.42-14.44-1.28-19.81,7.78-5.85,22.68-5.84,30.45,0,7,5.26,6.54,15.17-1,19.58A26,26,0,0,1,311.14,304Z" transform="translate(94 224)"/>
+  </g>
+</svg>
+
+</div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$(function(){
+    $(".roar .path").on('webkitAnimationEnd', function(){
+      $(".roar").removeClass("stroke").addClass("fill");
+        // if ($(".roar").hasClass("stroke")) {
+        //     $(".roar").removeClass("stroke").addClass("fill");
+        // }else if($(".roar").hasClass("fill")){
+        //     $(".roar").removeClass("fill").addClass("zoom");
+        // }
+    });
+});
+</script>
+
+</body>
+</html>
