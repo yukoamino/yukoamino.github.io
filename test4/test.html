@@ -28,55 +28,6 @@
 <div class="">
 
 <style>
-@keyframes s0_anime {
-  0% {
-    stroke-dashoffset: 5000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes s0_end_anime {
-  0% {
-    fill: transparent;
-  }
-  100% {
-    fill:#010101;
-    stroke-width: 0;
-  }
-}
-@keyframes item_fade_in_anime {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.roar .s0 {
-  /* stroke:transparent;
-	fill:transparent;
-	stroke-dasharray: 5000;
-	stroke-dashoffset: 0;
-	stroke-width: 10; */
-}
-.roar.start .s0{
-	stroke:#010101;
-	animation: s0_anime 2s ease-in 0s forwards; 
-}
-.roar.end .s0{
-  stroke-width: 0;
-  animation: s0_end_anime 1s ease-in 0s forwards; 
-}
-.roar .item_fade_in {
-  /* opacity: 0; */
-}
-.roar.end .item_fade_in {
-  animation: item_fade_in_anime 1s ease-in 0s forwards; 
-}
-
-
-
 @keyframes stroke_anime {
   0% {
     stroke-dashoffset: 5000;
@@ -91,7 +42,7 @@
     stroke-width: 0;
   }
   100% {
-    fill:#010101;
+    fill:#000000;
   }
 }
 @keyframes fill_anime_r {
@@ -100,7 +51,7 @@
     stroke-width: 0;
   }
   100% {
-    fill: #861b38;
+    fill: #871b38;
   }
 }
 @keyframes fill_anime_g {
@@ -109,7 +60,7 @@
     stroke-width: 0;
   }
   100% {
-    fill: #b58e26;
+    fill: #b68f26;
   }
 }
 @keyframes zoom_anime {
@@ -117,7 +68,7 @@
     transform: scale(1);
   }
   100% {
-    transform: scale(5);
+    transform: scale(2.5);
   }
 }
 
@@ -145,6 +96,18 @@
 	animation: zoom_anime 1.5s ease-in 4s forwards; 
 }
 
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20%;
+  box-sizing: border-box;;
+  overflow: hidden;
+}
+.roar{
+  width: 100%;
+}
 .roar svg{
   text-align: center;
 }
@@ -154,8 +117,34 @@
 <div class="wrapper">
 
 <div class="roar stroke zoom">
+<svg viewBox="0 0 239 320">
+  <defs>
+    <style>
+      .r {
+        fill: #871b38;
+      }
+      .g {
+        fill: #b68f26;
+      }
+      .b {
+        fill: #000000;
+      }
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+    </style>
+  </defs>
+  <title>roar_face</title>
+  <g>
+    <path class="r thunder path" d="M579.94,229.07c3.2.78,6.12,2.33,9.64,2.24,3.22-.08,4.29,2.81,2.12,5.72-2.69,3.61-5.85,6.83-10.18,8.58-9.28,3.75-18.3,7.92-26.06,14.45-6.13,5.14-13.78,7.75-20.54,11.88-11.41,7-18.35,18.13-26.26,28.36-2.35,3-1.71,5.8,1.46,8.07,8.27,5.92,14.81,13.9,23.33,19.53a13.51,13.51,0,0,1,5.36,7.05c1.23,3.61.22,6.73-3.18,8.53-6.73,3.55-13.23,7.4-20.66,9.78-21.09,6.74-42.67,11.82-63.55,19.11-12.41,4.33-25,6.42-37.89,8.14-10,1.34-19.53-1.26-29.22-2.46-3.59-.44-4.18-3-2.83-5.91a10.1,10.1,0,0,1,2.76-3.5c10.53-8.61,20-18.63,32.42-24.76a72.31,72.31,0,0,0,19.55-14.54c3.3-3.36,7.33-5.69,11.24-8.23,6.85-4.47,7-6.55,2.61-13.12a43,43,0,0,0-10.85-11.53c-7.3-5.2-10.74-13.49-15.22-20.74-4-6.45,1.84-14.72,9.53-14.8a15.58,15.58,0,0,0,6.3-1.29c15.11-6.65,31.62-9.1,46.8-15.61,5.24-2.25,11.12-1.89,16.66-3a81.07,81.07,0,0,0,13.78-4.35c5.47-2.13,11.19-2.79,17-3.36,8.74-.84,17.38-2.66,26.06-4.13.31-.05.52-.71.78-1.09h5c2.38,1.09,4.89.26,7.32.52C575.48,228.84,577.77,228.12,579.94,229.07Z" transform="translate(-366 -228)"/>
+    <path class="b eye path" d="M419,444.54c.73,15.09-1.7,29.86-5.09,44.46-2.13,9.13-8.78,13.59-18.1,12.81-7.24-.61-13.4-3.86-18.83-8.43-4.38-3.7-4.08-9.29-4.82-14.3-3.07-20.69-1.14-41.34.73-62,.28-3.1,1.07-6.4-3-8a2.8,2.8,0,0,1-1.86-3.63c.64-2,2.25-1.95,4.06-1.92,12.24.23,23.1,5.65,34.34,9.4,11.72,3.91,12.19,5.15,12.55,17.58C419.14,435.22,419,439.88,419,444.54Z" transform="translate(-366 -228)"/>
+    <path class="b eye path" d="M573.57,501.88c-8.66.06-14.46-4.25-16.56-13a186,186,0,0,1-4.1-66.36c.36-3,1.19-5.73,4.27-6.77,13.44-4.55,26.28-11.16,40.81-12,1.86-.11,3.83-.78,4.79,1.37,1.11,2.5-.8,3.68-2.63,4.58-2.2,1.08-2.69,2.87-2.2,5,3.38,14.58.6,29.52,2.6,44.22,1.34,9.81-1.44,19.51-3.45,29C595.6,495.1,583.26,501.81,573.57,501.88Z" transform="translate(-366 -228)"/>
+    <path class="g nose path" d="M478.08,514.68c-8.77-1.58-18.16-12.53-13.4-22.74,1.41-3,3.15-5.79,6.15-6.73,8.55-2.67,17.25-4.89,26.3-2,6.6,2.09,10.39,6.85,11.76,13.31s-.6,12-7,15.28c-1.69.88-2.77,2.89-5,2.84C490.61,515,484.34,514.88,478.08,514.68Z" transform="translate(-366 -228)"/>
+    <path class="b mouth path" d="M480,546.24a62.88,62.88,0,0,1-26.11-9c-6.44-4.09-13.53-7.18-18.93-12.81-1.27-1.32-2.71-2.47-4-3.81-1.87-2-2.88-4.32-.68-6.62s4.68-1.57,6.64.34c6,5.83,12.95,10.21,20.13,14.52,15.35,9.19,30.77,11.35,47.5,4.1,10.44-4.52,20.69-9.11,29.14-17a9.3,9.3,0,0,1,2.57-1.51c2.37-1.1,4.7-1,6.16,1.34s.25,4.32-1.7,6.06a84.55,84.55,0,0,1-20.22,13.61C509.13,541,497.7,546.64,480,546.24Z" transform="translate(-366 -228)"/>
+  </g>
+</svg>
+</div>
+
+<!-- <div class="roar stroke zoom">
+<svg viewBox="0 0 800 800">
   <defs>
     <style>
       .r {
@@ -178,8 +167,8 @@
     <path class="g nose path" d="M311.14,304a26.34,26.34,0,0,1-13.88-3.15c-7.8-4.35-8.42-14.44-1.28-19.81,7.78-5.85,22.68-5.84,30.45,0,7,5.26,6.54,15.17-1,19.58A26,26,0,0,1,311.14,304Z" transform="translate(94 224)"/>
   </g>
 </svg>
+</div> -->
 
-</div>
 
 </div>
 
@@ -189,11 +178,6 @@
 $(function(){
     $(".roar .path").on('webkitAnimationEnd', function(){
       $(".roar").removeClass("stroke").addClass("fill");
-        // if ($(".roar").hasClass("stroke")) {
-        //     $(".roar").removeClass("stroke").addClass("fill");
-        // }else if($(".roar").hasClass("fill")){
-        //     $(".roar").removeClass("fill").addClass("zoom");
-        // }
     });
 });
 </script>
