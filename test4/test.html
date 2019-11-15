@@ -30,9 +30,11 @@
 <style>
 @keyframes stroke_anime {
   0% {
+    stroke-width: 4;
     stroke-dashoffset: 5000;
   }
   100% {
+    stroke-width: 4;
     stroke-dashoffset: 0;
   }
 }
@@ -43,6 +45,7 @@
   }
   100% {
     fill:#000000;
+    stroke-width: 0;
   }
 }
 @keyframes fill_anime_r {
@@ -52,6 +55,7 @@
   }
   100% {
     fill: #871b38;
+    stroke-width: 4;
   }
 }
 @keyframes fill_anime_g {
@@ -61,6 +65,7 @@
   }
   100% {
     fill: #b68f26;
+    stroke-width: 4;
   }
 }
 @keyframes zoom_anime {
@@ -77,11 +82,14 @@
 	fill:transparent;
 	stroke-dasharray: 5000;
 	stroke-dashoffset: 0;
-	stroke-width: 4;
+  stroke:#010101;
+	stroke-width: 0;
 }
 .roar.stroke .path{
-  stroke:#010101;
-	animation: stroke_anime 2s ease-in 0s forwards; 
+	animation: stroke_anime 2s ease-in 3s forwards; 
+}
+.roar.fill .path{
+  /* stroke-width: 4; */
 }
 .roar.fill .b{
   animation: fill_anime_b 1s ease-in 0s forwards; 
@@ -93,7 +101,7 @@
   animation: fill_anime_g 1s ease-in 0s forwards; 
 }
 .roar.zoom{
-	animation: zoom_anime 1.5s ease-in 4s forwards; 
+	animation: zoom_anime 1.5s ease-in 8s forwards; 
 }
 
 .wrapper{
