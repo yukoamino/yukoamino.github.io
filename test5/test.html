@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+.body{
+	width: 1200px;
+	height: 1500px;
+	text-align: center;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+
+	<style>
+		.anime-box {
+			position: relative;
+			width: 100vw;
+			height: 100vw;
+			background: #eee;
+			overflow: hidden;
+		}
+		.face {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 150px;
+			height: auto;
+			transform: scale(0);
+		}
+		#face01 {
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			z-index: 30;
+		}
+		#face02 {left: 70px;top: 50px;z-index: 2;}
+		#face03 {left: 200px; top: 200px;}
+		#face04 {left: 200px;top: 70px;z-index: 2;}
+		#face05 {left: 50px;top: 280px;}
+		#face06 {left: 20px;top: 170px;z-index: 2;}
+		#face07 {left: 280px;top: -10px;}
+		#face08 {left: 20px;top: -30px;}
+		#face09 {left: 240px;top: 140px;z-index: 2;}
+		#face10 {left: 140px;top: 220px;z-index: 3;}
+		#face11 {left: -10px;top: 100px;z-index: 2;}
+		#face12 {left: 180px;top: 300px;z-index: 2;}
+		#face13 {left: 180px;top: -10px;}
+		#face14 {left: -50px;top: 300px;}
+		#face15 {left: 100px;top: -50px;}
+		#face16 {left: 260px;top: 220px;z-index: 2;}
+		#face17 {left: -50px;top: -50px;}
+		#face18 {left: 270px;top: 280px;z-index: 1;}
+		#face19 {left: -40px;top: 30px;z-index: 1;}
+		#face20 {left: -30px;top: 210px;z-index: 1;}
+		#face21 {left: 290px; top: 60px;}
+
+		.roar-box {
+			position: absolute;
+			bottom: 30px;
+			width: 100%;
+		}
+		.roar-parts {
+			position: absolute;
+		}
+		#roar-face {
+			width: 223px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			bottom: 110px;
+			transform-origin: center bottom;
+		}
+		#roar-body {
+			width: 131px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			bottom: 0px;
+		}
+		.roar-arm {
+			width: 36px;
+			bottom: 60px;
+		}
+		#roar-arm-l {
+			left: 120px;
+			transform-origin: right top;
+		}
+		#roar-arm-r {
+			right: 120px;
+		}
+	</style>
+
+	<div class="anime-box">
+		<div class="face-box">
+			<img id="face01" class="face" src="./face-item.png" alt="">
+			<img id="face02" class="face" src="./face-item.png" alt="">
+			<img id="face03" class="face" src="./face-item.png" alt="">
+			<img id="face04" class="face" src="./face-item.png" alt="">
+			<img id="face05" class="face" src="./face-item.png" alt="">
+			<img id="face06" class="face" src="./face-item.png" alt="">
+			<img id="face07" class="face" src="./face-item.png" alt="">
+			<img id="face08" class="face" src="./face-item.png" alt="">
+			<img id="face09" class="face" src="./face-item.png" alt="">
+			<img id="face10" class="face" src="./face-item.png" alt="">
+			<img id="face11" class="face" src="./face-item.png" alt="">
+			<img id="face12" class="face" src="./face-item.png" alt="">
+			<img id="face13" class="face" src="./face-item.png" alt="">
+			<img id="face14" class="face" src="./face-item.png" alt="">
+			<img id="face15" class="face" src="./face-item.png" alt="">
+			<img id="face16" class="face" src="./face-item.png" alt="">
+			<img id="face17" class="face" src="./face-item.png" alt="">
+			<img id="face18" class="face" src="./face-item.png" alt="">
+			<img id="face19" class="face" src="./face-item.png" alt="">
+			<img id="face20" class="face" src="./face-item.png" alt="">
+			<img id="face21" class="face" src="./face-item.png" alt="">
+		</div>
+		<div class="roar-box">
+			<img id="roar-face" class="roar-parts" src="./face.png" alt="">
+			<img id="roar-body" class="roar-parts" src="./body.png" alt="">
+			<img id="roar-arm-l" class="roar-parts roar-arm" src="./arm-left.png" alt="">
+			<img id="roar-arm-r" class="roar-parts roar-arm" src="./arm-right.png" alt="">
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="./anime.min.js"></script>
+	<script>
+	$(function(){
+		var timeline = anime.timeline({
+			duration: 800
+		});
+		timeline
+			// .add({
+			// 	targets: "#face01",
+			// 	delay: 2000,
+			// 	scale: [0, 1],
+			// 	duration: 1000
+			// })
+			// .add({
+			// 	targets: "#face02",
+			// 	delay: 2000,
+			// 	scale: [0, 1],
+			// 	duration: 1000
+			// })
+			// .add({
+			// 	targets: "#face03",
+			// 	scale: [0, 1],
+			// })
+			// .add({
+			// 	targets: "#face04",
+			// 	scale: [0, 1],
+			// }, "-=200")
+			// .add({
+			// 	targets: "#face05",
+			// 	scale: [0, 1],
+			// }, "-=200")
+			// .add({
+			// 	targets: "#face06",
+			// 	scale: [0, 1],
+			// }, "-=300")
+			// .add({
+			// 	targets: "#face07",
+			// 	scale: [0, 1],
+			// }, "-=300")
+			// .add({
+			// 	targets: "#face08",
+			// 	scale: [0, 1],
+			// }, "-=400")
+			// .add({
+			// 	targets: "#face09",
+			// 	scale: [0, 1],
+			// }, "-=500")
+			// .add({
+			// 	targets: "#face10",
+			// 	scale: [0, 1],
+			// }, "-=600")
+			// .add({
+			// 	targets: "#face11",
+			// 	scale: [0, 1],
+			// }, "-=600")
+			// .add({
+			// 	targets: "#face12",
+			// 	scale: [0, 1],
+			// }, "-=600")
+			// .add({
+			// 	targets: "#face13",
+			// 	scale: [0, 1],
+			// }, "-=600")
+			// .add({
+			// 	targets: "#face14",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: "#face15",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: "#face16",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: "#face17",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: "#face18",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: "#face19",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: "#face20",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: "#face21",
+			// 	scale: [0, 1],
+			// }, "-=700")
+			// .add({
+			// 	targets: ".face-box",
+			// 	delay: 2000,
+			// 	duration: 800,
+			// 	opacity: 0,
+			// 	easing: "linear"
+			// });
+			.add({
+				targets: "#roar-arm-l",
+				rotate: ["0deg", "100deg", "0deg"],
+				duration: 2000,
+//				easing: "linear"
+			});
+
+	});
+	</script>
+
+</body>
+</html>
