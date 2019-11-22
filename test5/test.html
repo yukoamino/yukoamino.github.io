@@ -71,7 +71,7 @@
 
 		.roar-box {
 			position: absolute;
-			bottom: 30px;
+			bottom: 400px;
 			width: 100%;
 		}
 		.roar-parts {
@@ -102,6 +102,7 @@
 		}
 		#roar-arm-r {
 			right: 120px;
+			transform-origin: left top;
 		}
 	</style>
 
@@ -145,107 +146,148 @@
 			duration: 800
 		});
 		timeline
-			// .add({
-			// 	targets: "#face01",
-			// 	delay: 2000,
-			// 	scale: [0, 1],
-			// 	duration: 1000
-			// })
-			// .add({
-			// 	targets: "#face02",
-			// 	delay: 2000,
-			// 	scale: [0, 1],
-			// 	duration: 1000
-			// })
-			// .add({
-			// 	targets: "#face03",
-			// 	scale: [0, 1],
-			// })
-			// .add({
-			// 	targets: "#face04",
-			// 	scale: [0, 1],
-			// }, "-=200")
-			// .add({
-			// 	targets: "#face05",
-			// 	scale: [0, 1],
-			// }, "-=200")
-			// .add({
-			// 	targets: "#face06",
-			// 	scale: [0, 1],
-			// }, "-=300")
-			// .add({
-			// 	targets: "#face07",
-			// 	scale: [0, 1],
-			// }, "-=300")
-			// .add({
-			// 	targets: "#face08",
-			// 	scale: [0, 1],
-			// }, "-=400")
-			// .add({
-			// 	targets: "#face09",
-			// 	scale: [0, 1],
-			// }, "-=500")
-			// .add({
-			// 	targets: "#face10",
-			// 	scale: [0, 1],
-			// }, "-=600")
-			// .add({
-			// 	targets: "#face11",
-			// 	scale: [0, 1],
-			// }, "-=600")
-			// .add({
-			// 	targets: "#face12",
-			// 	scale: [0, 1],
-			// }, "-=600")
-			// .add({
-			// 	targets: "#face13",
-			// 	scale: [0, 1],
-			// }, "-=600")
-			// .add({
-			// 	targets: "#face14",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: "#face15",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: "#face16",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: "#face17",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: "#face18",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: "#face19",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: "#face20",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: "#face21",
-			// 	scale: [0, 1],
-			// }, "-=700")
-			// .add({
-			// 	targets: ".face-box",
-			// 	delay: 2000,
-			// 	duration: 800,
-			// 	opacity: 0,
-			// 	easing: "linear"
-			// });
+			.add({
+				targets: "#face01",
+				delay: 2000,
+				scale: [0, 1],
+				duration: 1000
+			})
+			.add({
+				targets: "#face02",
+				delay: 2000,
+				scale: [0, 1],
+				duration: 1000
+			})
+			.add({
+				targets: "#face03",
+				scale: [0, 1],
+			})
+			.add({
+				targets: "#face04",
+				scale: [0, 1],
+			}, "-=200")
+			.add({
+				targets: "#face05",
+				scale: [0, 1],
+			}, "-=200")
+			.add({
+				targets: "#face06",
+				scale: [0, 1],
+			}, "-=300")
+			.add({
+				targets: "#face07",
+				scale: [0, 1],
+			}, "-=300")
+			.add({
+				targets: "#face08",
+				scale: [0, 1],
+			}, "-=400")
+			.add({
+				targets: "#face09",
+				scale: [0, 1],
+			}, "-=500")
+			.add({
+				targets: "#face10",
+				scale: [0, 1],
+			}, "-=600")
+			.add({
+				targets: "#face11",
+				scale: [0, 1],
+			}, "-=600")
+			.add({
+				targets: "#face12",
+				scale: [0, 1],
+			}, "-=600")
+			.add({
+				targets: "#face13",
+				scale: [0, 1],
+			}, "-=600")
+			.add({
+				targets: "#face14",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: "#face15",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: "#face16",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: "#face17",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: "#face18",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: "#face19",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: "#face20",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: "#face21",
+				scale: [0, 1],
+			}, "-=700")
+			.add({
+				targets: ".face-box",
+				delay: 2000,
+				duration: 800,
+				opacity: 0,
+				easing: "linear"
+			})
+			.add({
+				targets: ".roar-box",
+				bottom: "30px",
+				delay: 1500,
+				duration: 800,
+				easing: "easeOutBounce"
+			})
 			.add({
 				targets: "#roar-arm-l",
-				rotate: ["0deg", "100deg", "0deg"],
-				duration: 2000,
-//				easing: "linear"
-			});
+				rotate: ["0deg", "100deg", "0deg", "100deg", "0deg", "100deg", "0deg"],
+				delay: 500,
+				duration: 1200,
+				easing: "easeInOutQuad"
+			})
+			.add({
+				targets: "#roar-arm-r",
+				rotate: ["0deg", "-100deg", "0deg", "-100deg", "0deg", "-100deg", "0deg"],
+				delay: 500,
+				duration: 1200,
+				easing: "easeInOutQuad"
+			}, "-=1700")
+			.add({
+				targets: ".roar-box",
+				rotateY: ["0deg", "90deg", "0deg", "90deg", "0deg"],
+				delay: 800,
+				duration: 380,
+				easing: "easeInQuad"
+			})
+			.add({
+				targets: "#roar-face",
+				rotate: "-20deg",
+				delay: 500,
+				duration: 1000,
+				easing: "easeInOutQuad"
+			}, "-=0")
+			.add({
+				targets: "#roar-arm-l",
+				rotate: "80deg",
+				duration: 1000,
+				easing: "easeInOutQuad"
+			}, "-=1000")
+			.add({
+				targets: "#roar-arm-r",
+				rotate: "-40deg",
+				duration: 1000,
+				easing: "easeInOutQuad"
+			}, "-=1000");
 
 	});
 	</script>
