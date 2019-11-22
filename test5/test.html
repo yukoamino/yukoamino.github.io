@@ -31,7 +31,8 @@
 			position: relative;
 			width: 100vw;
 			height: 100vw;
-			background: #eee;
+			background: #fef1f1;
+			/* border-bottom: 1px solid #ccc; */
 			overflow: hidden;
 		}
 		.face {
@@ -82,53 +83,57 @@
 			left: 0;
 			right: 0;
 			margin: auto;
-			bottom: 110px;
+			bottom: 120px;
 			transform-origin: center bottom;
+			z-index: 3;
 		}
 		#roar-body {
-			width: 131px;
+			width: 111px;
 			left: 0;
 			right: 0;
 			margin: auto;
 			bottom: 0px;
+			z-index: 2;
 		}
 		.roar-arm {
-			width: 36px;
 			bottom: 60px;
+			z-index: 1;
 		}
 		#roar-arm-l {
 			left: 120px;
-			transform-origin: right top;
+			width: 59px;
+			transform-origin: 33px 25px;
 		}
 		#roar-arm-r {
 			right: 120px;
-			transform-origin: left top;
+			width: 56px;
+			transform-origin: 22px 33px;
 		}
 	</style>
 
 	<div class="anime-box">
 		<div class="face-box">
-			<img id="face01" class="face" src="./face-item.png" alt="">
-			<img id="face02" class="face" src="./face-item.png" alt="">
-			<img id="face03" class="face" src="./face-item.png" alt="">
-			<img id="face04" class="face" src="./face-item.png" alt="">
-			<img id="face05" class="face" src="./face-item.png" alt="">
-			<img id="face06" class="face" src="./face-item.png" alt="">
-			<img id="face07" class="face" src="./face-item.png" alt="">
-			<img id="face08" class="face" src="./face-item.png" alt="">
-			<img id="face09" class="face" src="./face-item.png" alt="">
-			<img id="face10" class="face" src="./face-item.png" alt="">
-			<img id="face11" class="face" src="./face-item.png" alt="">
-			<img id="face12" class="face" src="./face-item.png" alt="">
-			<img id="face13" class="face" src="./face-item.png" alt="">
-			<img id="face14" class="face" src="./face-item.png" alt="">
-			<img id="face15" class="face" src="./face-item.png" alt="">
-			<img id="face16" class="face" src="./face-item.png" alt="">
-			<img id="face17" class="face" src="./face-item.png" alt="">
-			<img id="face18" class="face" src="./face-item.png" alt="">
-			<img id="face19" class="face" src="./face-item.png" alt="">
-			<img id="face20" class="face" src="./face-item.png" alt="">
-			<img id="face21" class="face" src="./face-item.png" alt="">
+			<img id="face01" class="face" src="./face.png" alt="">
+			<img id="face02" class="face" src="./face.png" alt="">
+			<img id="face03" class="face" src="./face.png" alt="">
+			<img id="face04" class="face" src="./face.png" alt="">
+			<img id="face05" class="face" src="./face.png" alt="">
+			<img id="face06" class="face" src="./face.png" alt="">
+			<img id="face07" class="face" src="./face.png" alt="">
+			<img id="face08" class="face" src="./face.png" alt="">
+			<img id="face09" class="face" src="./face.png" alt="">
+			<img id="face10" class="face" src="./face.png" alt="">
+			<img id="face11" class="face" src="./face.png" alt="">
+			<img id="face12" class="face" src="./face.png" alt="">
+			<img id="face13" class="face" src="./face.png" alt="">
+			<img id="face14" class="face" src="./face.png" alt="">
+			<img id="face15" class="face" src="./face.png" alt="">
+			<img id="face16" class="face" src="./face.png" alt="">
+			<img id="face17" class="face" src="./face.png" alt="">
+			<img id="face18" class="face" src="./face.png" alt="">
+			<img id="face19" class="face" src="./face.png" alt="">
+			<img id="face20" class="face" src="./face.png" alt="">
+			<img id="face21" class="face" src="./face.png" alt="">
 		</div>
 		<div class="roar-box">
 			<img id="roar-face" class="roar-parts" src="./face.png" alt="">
@@ -169,39 +174,39 @@
 			.add({
 				targets: "#face05",
 				scale: [0, 1],
-			}, "-=200")
+			}, "-=300")
 			.add({
 				targets: "#face06",
 				scale: [0, 1],
-			}, "-=300")
+			}, "-=400")
 			.add({
 				targets: "#face07",
 				scale: [0, 1],
-			}, "-=300")
+			}, "-=500")
 			.add({
 				targets: "#face08",
 				scale: [0, 1],
-			}, "-=400")
+			}, "-=600")
 			.add({
 				targets: "#face09",
 				scale: [0, 1],
-			}, "-=500")
+			}, "-=700")
 			.add({
 				targets: "#face10",
 				scale: [0, 1],
-			}, "-=600")
+			}, "-=700")
 			.add({
 				targets: "#face11",
 				scale: [0, 1],
-			}, "-=600")
+			}, "-=700")
 			.add({
 				targets: "#face12",
 				scale: [0, 1],
-			}, "-=600")
+			}, "-=700")
 			.add({
 				targets: "#face13",
 				scale: [0, 1],
-			}, "-=600")
+			}, "-=700")
 			.add({
 				targets: "#face14",
 				scale: [0, 1],
@@ -271,7 +276,7 @@
 			})
 			.add({
 				targets: "#roar-face",
-				rotate: "-20deg",
+				rotate: "-15deg",
 				delay: 500,
 				duration: 1000,
 				easing: "easeInOutQuad"
