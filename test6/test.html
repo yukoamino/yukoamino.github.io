@@ -11,6 +11,8 @@
 <meta property="og:image" content="">
 <meta property="og:url" content="">
 <!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+<link rel="stylesheet" href="perfect-scrollbar.css" />
+<script src="perfect-scrollbar.min.js"></script>
 <style type="text/css">
 *{
 	margin: 0;
@@ -21,6 +23,9 @@ body {
 }
 .inner{
 	padding: 10px;
+}
+h2 {
+	margin-top: 20px;
 }
 .table-container {
 	width: 100%;
@@ -52,7 +57,21 @@ th {
   border-radius: 5px;
   background: #666;
 }
-
+.table-container3 {
+	position: relative;
+	padding-bottom: 11px;
+}
+.ps__rail-x {
+    opacity: 1!important;
+		background: #ccc !important;
+		height: 10px;
+		border-radius: 6px;
+}
+.ps__thumb-x {
+	background: #666;
+	height: 10px;
+	bottom: 0;
+}
 </style>
 </head>
 <body>
@@ -106,8 +125,34 @@ th {
 			</table>
 		</div>
 
+		<h2>JSで常に表示</h2>
+		<div class="table-container table-container3">
+			<table>
+				<tbody>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+						<td>テキストテキストテキスト</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
 	</div>
 </div>
 
+<script>
+	var ps = new PerfectScrollbar('.table-container3');
+</script>
 </body>
 </html>
