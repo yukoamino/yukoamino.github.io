@@ -16,6 +16,9 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+	font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+}
 .inner{
 	padding: 10px;
 }
@@ -37,12 +40,27 @@ th {
 	background: #000;
 	color: #fff;
 }
+.table-container2::-webkit-scrollbar {
+  height: 10px;
+}
+.table-container2::-webkit-scrollbar-track {
+  margin: 0 2px;
+  background: #ccc;
+  border-radius: 5px;
+}
+.table-container2::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #666;
+}
 
 </style>
 </head>
 <body>
 <div class="body">
 	<div class="inner">
+		<h1>スクロールバーテスト</h1>
+
+		<h2>デフォルト</h2>
 		<div class="table-container">
 			<table>
 				<tbody>
@@ -64,6 +82,30 @@ th {
 				</tbody>
 			</table>
 		</div>
+
+		<h2>CSSで常に表示</h2>
+		<div class="table-container table-container2">
+			<table>
+				<tbody>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+						<td>テキストテキストテキスト</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
 	</div>
 </div>
 
