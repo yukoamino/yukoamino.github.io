@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>test1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+}
+.inner{
+	padding: 20px 10px;
+}
+h2 {
+	margin-top: 20px;
+}
+.table-container {
+	width: 100%;
+	overflow-x: scroll;
+}
+table {
+	width: 600px;
+	font-size: 14px;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+table + table {
+	margin-top: 20px;
+}
+th,td {
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+th {
+	background: #000;
+	color: #fff;
+}
+tbody th {
+	background: #ddd;
+}
+.sp table {
+	overflow: hidden;
+}
+.sp tr, .sp th, .sp td {
+	display: block;
+	box-sizing: border-box;
+}
+.sp thead {
+	display: block;
+	float: left;
+	width: 20%;
+}
+.sp thead tr {
+	width: 100%;
+}
+.sp thead th {
+	width: 100%;
+	height: 54px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.sp thead th:first-child {
+	height: 66px;
+}
+.sp tbody {
+	display: block;
+	float: left;
+	width: 80%;
+}
+.sp tbody tr {
+	display: block;
+	float: left;
+	width: 25%;
+}
+.sp tbody th, .sp tbody td {
+	width: 100%;
+}
+.sp tbody tr:nth-child(1) th:first-child,
+.sp tbody tr:nth-child(3) th:first-child {
+	width: 200%;
+}
+.sp tbody tr:nth-child(2),
+.sp tbody tr:nth-child(4) {
+	margin-top: 33px;
+}
+.pc2 {
+	display: flex;
+}
+.pc2 table + table {
+	margin-top: 0;
+}
+.pc2 table:last-child thead th:first-child {
+	display: none;
+}
+.pc2 table:last-child tbody th {
+	display: none;
+}
+</style>
+</head>
+<body>
+<div class="body">
+	<div class="inner">
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2"></th>
+					<th>見出し</th>
+					<th>見出し</th>
+					<th>見出し</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th rowspan="2">生前</th>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+				<tr>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+				<tr>
+					<th rowspan="2">相続後</th>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+				<tr>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="sp">
+			<thead>
+				<tr>
+					<th colspan="2"></th>
+					<th>見出し</th>
+					<th>見出し</th>
+					<th>見出し</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th rowspan="2">生前</th>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+				<tr>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+				<tr>
+					<th rowspan="2">相続後</th>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+				<tr>
+					<th>見出し</th>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+					<td>テキストテキストテキスト</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="pc2">
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>いる場合</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>いない場合</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="sp2">
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>いる場合</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>いない場合</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+					<tr>
+						<th>見出し</th>
+						<td>テキストテキストテキスト</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>
