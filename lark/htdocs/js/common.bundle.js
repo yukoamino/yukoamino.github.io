@@ -3866,67 +3866,7 @@ var _ModalUI2 = _interopRequireDefault(_ModalUI);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 new _ModalUI2.default();
-
-var Common =
-/**
- * constructor
- */
-function Common() {
-  _classCallCheck(this, Common);
-}
-// this.redirect();
-
-// this.scrollFadeIn = new ScrollFadeIn('.scrollFadeIn');
-// this.navUI = new NavUI('.nav');
-// this.headerUI = new HeaderUI('.header');
-// this.confirmModalUI = new ConfirmModalUI('.overlay');
-// this.topVisualUI = new TopVisualUI('sp');
-// this.videoUI = new VideoUI();
-// this.topMainvisualUI = new TopMainvisualUI();
-
-// this.$main = document.querySelector('.main');
-// this.$mainMovie = document.querySelector('.js-mv-movie');
-
-// this.startAnimation();
-// this.startMainvisualVideo();
-
-
-/**
- * デバイスリダイレクト
- */
-// redirect() {
-//   if (!CONFIG.IS_MOBILE) {
-//     location.href = `${location.pathname.replace('/spn', '')}${location.search}${location.hash}`;
-//   }
-// }
-
-/**
- * アニメーションを開始する
- */
-// startAnimation() {
-//   this.confirmModalUI.on('close', () => {
-//     this.topVisualUI.setAnimation();
-//   });
-// }
-
-// メインビジュアルのビデオタグの再生と、初回アクセスのローカルストレージをチェックする。
-// startMainvisualVideo() {
-//   this.confirmModalUI.on('close', () => {
-//     if (localStorage.getItem('firstmainvisual02') !== 'isFirst' && this.$mainMovie !== null) {
-//       this.$main.classList.add('movie-end');
-//       this.videoUI.startVideo();
-//       this.topMainvisualUI.isFirst();
-//     } else {
-//       this.topMainvisualUI.switchingMainVisual();
-//     }
-//   });
-// }
-;
-
-//window.COMMON = new Common();
 
 /***/ }),
 /* 131 */
@@ -9499,9 +9439,9 @@ var ModalUI = function () {
   function ModalUI() {
     _classCallCheck(this, ModalUI);
 
-    this.$modalWrap = document.querySelector('.js-modal-wrap');
-    this.$openButton = document.querySelector('.js-modal-open');
-    this.$closeButton = document.querySelector('.js-modal-close');
+    this.$modalWrap = '.js-modal-wrap';
+    this.$openButton = document.querySelectorAll('.js-modal-open');
+    this.$closeButton = document.querySelectorAll('.js-modal-close');
 
     this.bind();
   }
@@ -9514,35 +9454,47 @@ var ModalUI = function () {
       if (this.$openButton === null) {
         return;
       } else {
-        this.$openButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          _this.open();
-        });
+        for (var i = 0; i < this.$openButton.length; i++) {
+          this.$openButton[i].addEventListener('click', function (e) {
+            var ele = document.getElementById(e.target.hash.slice(1));
+            e.preventDefault();
+            _this.open(ele);
+          });
+        }
 
-        this.$closeButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          _this.close();
-        });
+        for (var i = 0; i < this.$closeButton.length; i++) {
+          this.$closeButton[i].addEventListener('click', function (e) {
+            var ele = e.target.closest(_this.$modalWrap);
+            e.preventDefault();
+            _this.close(ele);
+          });
+        }
       }
     }
   }, {
     key: 'open',
-    value: function open() {
-      (0, _velocityAnimate2.default)(this.$modalWrap, {
+    value: function open(ele) {
+      (0, _velocityAnimate2.default)(ele, {
         opacity: [1, 0]
       }, {
         duration: 300,
-        display: 'block'
+        display: 'block',
+        complete: function complete() {
+          ele.classList.add('is-open');
+        }
       });
     }
   }, {
     key: 'close',
-    value: function close() {
-      (0, _velocityAnimate2.default)(this.$modalWrap, {
+    value: function close(ele) {
+      (0, _velocityAnimate2.default)(ele, {
         opacity: 0
       }, {
         duration: 300,
-        display: 'none'
+        display: 'none',
+        complete: function complete() {
+          ele.classList.remove('is-open');
+        }
       });
     }
   }]);

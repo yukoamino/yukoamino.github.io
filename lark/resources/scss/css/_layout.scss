@@ -102,7 +102,7 @@ $HEADER-SP: 59px;
 // ===================================================================
 
 .modal {
-	// display: none;
+	display: none;
 
   position: absolute;
 	top: 0;
@@ -224,11 +224,15 @@ $HEADER-SP: 59px;
       &-line {
         display: block;
         width: 1px;
-        height: 100%;
+        height: 0;
         background: #fff;
         position: absolute;
         left: 0;
         top: 0;
+        transition: all .5s;
+        .is-open & {
+          height: 100%;
+        }
       }
       &-subtext {
         font-size: 16px;

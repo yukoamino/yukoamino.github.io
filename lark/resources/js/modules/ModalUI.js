@@ -2,9 +2,9 @@ import velocity from 'velocity-animate';
 
 export default class ModalUI {
   constructor() {
-    this.$modalWrap = document.querySelector('.js-modal-wrap');
-    this.$openButton = document.querySelector('.js-modal-open');
-    this.$closeButton = document.querySelector('.js-modal-close');
+    this.$modalWrap = '.js-modal-wrap';
+    this.$openButton = document.querySelectorAll('.js-modal-open');
+    this.$closeButton = document.querySelectorAll('.js-modal-close');
 
     this.bind();
   }
@@ -13,33 +13,45 @@ export default class ModalUI {
     if (this.$openButton === null) {
       return;
     } else {
-      this.$openButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.open();
-      });
+      for (var i = 0; i < this.$openButton.length; i++) {
+        this.$openButton[i].addEventListener('click', (e) => {
+          var ele = document.getElementById(e.target.hash.slice(1));
+          e.preventDefault();
+          this.open(ele);
+        });
+      }
 
-      this.$closeButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.close();
-      })
+      for (var i = 0; i < this.$closeButton.length; i++) {
+        this.$closeButton[i].addEventListener('click', (e) => {
+          var ele = e.target.closest(this.$modalWrap);
+          e.preventDefault();
+          this.close(ele);
+        });
+      }
     }
   }
 
-  open() {
-    velocity(this.$modalWrap, {
+  open(ele) {
+    velocity(ele, {
       opacity: [1, 0],
     }, {
       duration: 300,
       display: 'block',
+      complete: function(){
+        ele.classList.add('is-open');
+      }
     });
   }
 
-  close() {
-    velocity(this.$modalWrap, {
+  close(ele) {
+    velocity(ele, {
       opacity: 0,
     }, {
       duration: 300,
       display: 'none',
+      complete: function(){
+        ele.classList.remove('is-open');
+      }
     });
   }
 }
