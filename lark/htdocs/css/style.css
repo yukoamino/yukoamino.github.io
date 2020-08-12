@@ -111,7 +111,7 @@ input, textarea {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 8001;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -120,7 +120,6 @@ input, textarea {
 @media screen and (max-width: 767px) {
   .modal {
     position: fixed;
-    top: 59px;
   }
 }
 
@@ -142,12 +141,6 @@ input, textarea {
   height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
-}
-
-@media screen and (max-width: 767px) {
-  .modal .modal-inner {
-    overflow-y: scroll;
-  }
 }
 
 .modal .modal-close-btn {
@@ -193,6 +186,48 @@ input, textarea {
       transform: rotate(-45deg);
 }
 
+.modal .modal-close-btn2 {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .modal .modal-close-btn2 {
+    display: block;
+    margin-top: 20px;
+  }
+  .modal .modal-close-btn2 a {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    background: #666666;
+  }
+  .modal .modal-close-btn2 a::before, .modal .modal-close-btn2 a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    width: 14px;
+    margin-left: 0px;
+    border: 1px #fff solid;
+    -ms-transform-origin: 50%;
+        transform-origin: 50%;
+  }
+  .modal .modal-close-btn2 a::before {
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+  }
+  .modal .modal-close-btn2 a::after {
+    -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+  }
+}
+
 .modal-main {
   width: 92%;
   margin: 65px auto 0;
@@ -203,7 +238,7 @@ input, textarea {
 
 @media screen and (max-width: 767px) {
   .modal-main {
-    height: calc(100vh - 59px - 65px - 65px);
+    height: 100%;
   }
 }
 
@@ -215,6 +250,13 @@ input, textarea {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-main-inner {
+    display: block;
+    overflow-y: scroll;
+  }
 }
 
 @media screen and (max-width: 767px) {
