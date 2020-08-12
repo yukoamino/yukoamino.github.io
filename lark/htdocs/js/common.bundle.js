@@ -3860,7 +3860,11 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 
 __webpack_require__(131);
 
-var _ModalUI = __webpack_require__(333);
+var _closest = __webpack_require__(333);
+
+var _closest2 = _interopRequireDefault(_closest);
+
+var _ModalUI = __webpack_require__(334);
 
 var _ModalUI2 = _interopRequireDefault(_ModalUI);
 
@@ -9421,13 +9425,36 @@ module.exports = function (regExp, replace) {
 "use strict";
 
 
+if (!Element.prototype.matches) {
+  Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+}
+
+if (!Element.prototype.closest) {
+  Element.prototype.closest = function (s) {
+    var el = this;
+
+    do {
+      if (el.matches(s)) return el;
+      el = el.parentElement || el.parentNode;
+    } while (el !== null && el.nodeType === 1);
+    return null;
+  };
+}
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _velocityAnimate = __webpack_require__(334);
+var _velocityAnimate = __webpack_require__(335);
 
 var _velocityAnimate2 = _interopRequireDefault(_velocityAnimate);
 
@@ -9536,7 +9563,7 @@ var ModalUI = function () {
 exports.default = ModalUI;
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! VelocityJS.org (1.5.2). (C) 2014 Julian Shapiro. MIT @license: en.wikipedia.org/wiki/MIT_License */
