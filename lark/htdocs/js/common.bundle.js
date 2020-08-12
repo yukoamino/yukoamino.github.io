@@ -9472,6 +9472,7 @@ var ModalUI = function () {
     this.$modalWrapList = document.querySelectorAll('.js-modal-wrap');
     this.$openButton = document.querySelectorAll('.js-modal-open');
     this.$closeButton = document.querySelectorAll('.js-modal-close');
+    this.$modalScroll = document.querySelectorAll('.js-modal-scroll');
 
     this.bind();
   }
@@ -9487,7 +9488,8 @@ var ModalUI = function () {
         for (var i = 0; i < this.$openButton.length; i++) {
           this.$openButton[i].addEventListener('click', function (e) {
             var ele = e.target.closest(_this.$sectionText);
-            var eleModal = document.getElementById(e.target.hash.slice(1));
+            var hash = e.target.hash;
+            var eleModal = document.getElementById(hash.slice(1));
             e.preventDefault();
             _this.hide(ele);
             _this.openModal(eleModal);
@@ -9499,11 +9501,11 @@ var ModalUI = function () {
             var eleModal = e.target.closest(_this.$modalWrap);
             var elements = [].slice.call(_this.$modalWrapList);
             var idx = elements.indexOf(eleModal);
-            var elementsText = [].slice.call(_this.$sectionTextList);
-            var ele = elementsText[idx];
+            var ele = _this.$sectionTextList[idx];
             e.preventDefault();
             _this.closeModal(eleModal);
             _this.show(ele);
+            _this.$modalScroll[idx].scrollTop = 0;
           });
         }
       }

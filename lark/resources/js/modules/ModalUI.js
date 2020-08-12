@@ -8,6 +8,7 @@ export default class ModalUI {
     this.$modalWrapList = document.querySelectorAll('.js-modal-wrap');
     this.$openButton = document.querySelectorAll('.js-modal-open');
     this.$closeButton = document.querySelectorAll('.js-modal-close');
+    this.$modalScroll = document.querySelectorAll('.js-modal-scroll');
 
     this.bind();
   }
@@ -19,7 +20,8 @@ export default class ModalUI {
       for (var i = 0; i < this.$openButton.length; i++) {
         this.$openButton[i].addEventListener('click', (e) => {
           var ele = e.target.closest(this.$sectionText);
-          var eleModal = document.getElementById(e.target.hash.slice(1));
+          var hash = e.target.hash;
+          var eleModal = document.getElementById(hash.slice(1));
           e.preventDefault();
           this.hide(ele);
           this.openModal(eleModal);
@@ -31,11 +33,11 @@ export default class ModalUI {
           var eleModal = e.target.closest(this.$modalWrap);
           var elements = [].slice.call(this.$modalWrapList);
           var idx = elements.indexOf(eleModal);
-          var elementsText = [].slice.call(this.$sectionTextList);
-          var ele = elementsText[idx];
+          var ele = this.$sectionTextList[idx];
           e.preventDefault();
           this.closeModal(eleModal);
           this.show(ele);
+          this.$modalScroll[idx].scrollTop = 0;
         });
       }
     }
