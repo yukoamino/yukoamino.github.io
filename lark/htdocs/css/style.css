@@ -38,6 +38,10 @@ body {
   color: #333333;
 }
 
+body.is-open {
+  overflow: hidden;
+}
+
 img {
   vertical-align: top;
 }

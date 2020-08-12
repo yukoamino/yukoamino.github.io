@@ -9481,6 +9481,7 @@ var ModalUI = function () {
         display: 'block',
         complete: function complete() {
           ele.classList.add('is-open');
+          document.body.classList.add('is-open');
         }
       });
     }
@@ -9494,6 +9495,7 @@ var ModalUI = function () {
         display: 'none',
         complete: function complete() {
           ele.classList.remove('is-open');
+          document.body.classList.remove('is-open');
         }
       });
     }

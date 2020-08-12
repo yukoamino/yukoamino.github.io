@@ -39,6 +39,7 @@ export default class ModalUI {
       display: 'block',
       complete: function(){
         ele.classList.add('is-open');
+        document.body.classList.add('is-open');
       }
     });
   }
@@ -51,6 +52,7 @@ export default class ModalUI {
       display: 'none',
       complete: function(){
         ele.classList.remove('is-open');
+        document.body.classList.remove('is-open');
       }
     });
   }
