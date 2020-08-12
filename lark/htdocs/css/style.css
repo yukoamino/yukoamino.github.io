@@ -38,10 +38,6 @@ body {
   color: #333333;
 }
 
-body.is-open {
-  overflow: hidden;
-}
-
 img {
   vertical-align: top;
 }
@@ -54,6 +50,12 @@ input, textarea {
   border: none;
   background: none;
   -webkit-appearance: none;
+}
+
+@media screen and (max-width: 767px) {
+  body.is-open {
+    overflow: hidden;
+  }
 }
 
 .header {
@@ -115,7 +117,7 @@ input, textarea {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 8001;
+  z-index: 100;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -124,6 +126,7 @@ input, textarea {
 @media screen and (max-width: 767px) {
   .modal {
     position: fixed;
+    z-index: 8001;
   }
 }
 
@@ -134,7 +137,13 @@ input, textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 767px) {
+  .modal:before {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .modal .modal-inner {
@@ -145,6 +154,12 @@ input, textarea {
   height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.modal.is-open .modal-inner {
+  opacity: 1;
 }
 
 .modal .modal-close-btn {
@@ -273,8 +288,14 @@ input, textarea {
 .modal-main-heading {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: baseline;
-      align-items: baseline;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-main-heading {
+    display: block;
+  }
 }
 
 .modal-main-heading-text {
@@ -290,15 +311,16 @@ input, textarea {
   }
 }
 
-.modal-main-heading-inner {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  position: relative;
+.modal-main-heading-subtext {
+  font-size: 16px;
+  padding: 0px 0 0px 20px;
   margin-left: 20px;
+  position: relative;
 }
 
-.modal-main-heading-line {
+.modal-main-heading-subtext::before {
   display: block;
+  content: '';
   width: 1px;
   height: 0;
   background: #fff;
@@ -306,15 +328,21 @@ input, textarea {
   left: 0;
   top: 0;
   transition: all .5s;
+  transition-delay: .1s;
 }
 
-.is-open .modal-main-heading-line {
+.modal.is-open .modal-main-heading-subtext::before {
   height: 100%;
 }
 
-.modal-main-heading-subtext {
-  font-size: 16px;
-  padding: 2px 0 2px 20px;
+@media screen and (max-width: 767px) {
+  .modal-main-heading-subtext {
+    padding-left: 0;
+    margin: 20px 0 0 0;
+  }
+  .modal-main-heading-subtext::before {
+    display: none;
+  }
 }
 
 .modal-main-txt {
