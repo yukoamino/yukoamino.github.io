@@ -9439,7 +9439,10 @@ var ModalUI = function () {
   function ModalUI() {
     _classCallCheck(this, ModalUI);
 
+    this.$sectionText = '.js-section-text';
+    this.$sectionTextList = document.querySelectorAll('.js-section-text');
     this.$modalWrap = '.js-modal-wrap';
+    this.$modalWrapList = document.querySelectorAll('.js-modal-wrap');
     this.$openButton = document.querySelectorAll('.js-modal-open');
     this.$closeButton = document.querySelectorAll('.js-modal-close');
 
@@ -9456,27 +9459,44 @@ var ModalUI = function () {
       } else {
         for (var i = 0; i < this.$openButton.length; i++) {
           this.$openButton[i].addEventListener('click', function (e) {
-            var ele = document.getElementById(e.target.hash.slice(1));
+            var ele = e.target.closest(_this.$sectionText);
+            var eleModal = document.getElementById(e.target.hash.slice(1));
             e.preventDefault();
-            _this.open(ele);
+            _this.hide(ele);
+            _this.openModal(eleModal);
           });
         }
 
         for (var i = 0; i < this.$closeButton.length; i++) {
           this.$closeButton[i].addEventListener('click', function (e) {
-            var ele = e.target.closest(_this.$modalWrap);
+            var eleModal = e.target.closest(_this.$modalWrap);
+            var elements = [].slice.call(_this.$modalWrapList);
+            var idx = elements.indexOf(eleModal);
+            var elementsText = [].slice.call(_this.$sectionTextList);
+            var ele = elementsText[idx];
             e.preventDefault();
-            _this.close(ele);
+            _this.closeModal(eleModal);
+            _this.show(ele);
           });
         }
       }
     }
   }, {
-    key: 'open',
-    value: function open(ele) {
+    key: 'hide',
+    value: function hide(ele) {
+      (0, _velocityAnimate2.default)(ele, {
+        opacity: 0
+      }, {
+        duration: 300
+      });
+    }
+  }, {
+    key: 'openModal',
+    value: function openModal(ele) {
       (0, _velocityAnimate2.default)(ele, {
         opacity: [1, 0]
       }, {
+        delay: 400,
         duration: 300,
         display: 'block',
         complete: function complete() {
@@ -9486,8 +9506,17 @@ var ModalUI = function () {
       });
     }
   }, {
-    key: 'close',
-    value: function close(ele) {
+    key: 'show',
+    value: function show(ele) {
+      (0, _velocityAnimate2.default)(ele, {
+        opacity: 1
+      }, {
+        duration: 300
+      });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal(ele) {
       (0, _velocityAnimate2.default)(ele, {
         opacity: 0
       }, {

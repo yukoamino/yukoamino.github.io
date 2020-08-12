@@ -2,7 +2,10 @@ import velocity from 'velocity-animate';
 
 export default class ModalUI {
   constructor() {
+    this.$sectionText = '.js-section-text';
+    this.$sectionTextList = document.querySelectorAll('.js-section-text');
     this.$modalWrap = '.js-modal-wrap';
+    this.$modalWrapList = document.querySelectorAll('.js-modal-wrap');
     this.$openButton = document.querySelectorAll('.js-modal-open');
     this.$closeButton = document.querySelectorAll('.js-modal-close');
 
@@ -15,26 +18,43 @@ export default class ModalUI {
     } else {
       for (var i = 0; i < this.$openButton.length; i++) {
         this.$openButton[i].addEventListener('click', (e) => {
-          var ele = document.getElementById(e.target.hash.slice(1));
+          var ele = e.target.closest(this.$sectionText);
+          var eleModal = document.getElementById(e.target.hash.slice(1));
           e.preventDefault();
-          this.open(ele);
+          this.hide(ele);
+          this.openModal(eleModal);
         });
       }
 
       for (var i = 0; i < this.$closeButton.length; i++) {
         this.$closeButton[i].addEventListener('click', (e) => {
-          var ele = e.target.closest(this.$modalWrap);
+          var eleModal = e.target.closest(this.$modalWrap);
+          var elements = [].slice.call(this.$modalWrapList);
+          var idx = elements.indexOf(eleModal);
+          var elementsText = [].slice.call(this.$sectionTextList);
+          var ele = elementsText[idx];
           e.preventDefault();
-          this.close(ele);
+          this.closeModal(eleModal);
+          this.show(ele);
         });
       }
     }
   }
 
-  open(ele) {
+  hide(ele) {
+    velocity(ele, {
+      opacity: 0,
+    }, {
+      duration: 300,
+      }
+    );
+  }
+
+  openModal(ele) {
     velocity(ele, {
       opacity: [1, 0],
     }, {
+      delay: 400,
       duration: 300,
       display: 'block',
       complete: function(){
@@ -44,7 +64,16 @@ export default class ModalUI {
     });
   }
 
-  close(ele) {
+  show(ele) {
+    velocity(ele, {
+      opacity: 1,
+    }, {
+      duration: 300,
+      }
+    );
+  }
+
+  closeModal(ele) {
     velocity(ele, {
       opacity: 0,
     }, {
