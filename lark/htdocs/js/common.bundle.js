@@ -9475,6 +9475,7 @@ var ModalUI = function () {
     this.$modalScroll = document.querySelectorAll('.js-modal-scroll');
 
     this.bind();
+    this.checkModal();
   }
 
   _createClass(ModalUI, [{
@@ -9531,6 +9532,13 @@ var ModalUI = function () {
         complete: function complete() {
           ele.classList.add('is-open');
           document.body.classList.add('is-open');
+          var modalHeight = document.querySelector('.modal.is-open .modal-main-inner').clientHeight;
+          var modalHeight2 = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
+          if (modalHeight < modalHeight2) {
+            document.querySelector('.modal.is-open').classList.add('is-scroll');
+          } else {
+            document.querySelector('.modal.is-open').classList.remove('is-scroll');
+          }
         }
       });
     }
@@ -9556,6 +9564,24 @@ var ModalUI = function () {
           document.body.classList.remove('is-open');
         }
       });
+    }
+  }, {
+    key: 'checkModal',
+    value: function checkModal() {
+      window.addEventListener('resize', function () {
+        // console.log('checkModal');
+        if (document.querySelector('.modal.is-open .modal-main-inner') !== null) {
+          // console.log('modal');
+          var modalHeight = document.querySelector('.modal.is-open .modal-main-inner').clientHeight;
+          var modalHeight2 = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
+          if (modalHeight < modalHeight2) {
+            document.querySelector('.modal.is-open').classList.add('is-scroll');
+            // console.log('scroll');
+          } else {
+            document.querySelector('.modal.is-open').classList.remove('is-scroll');
+          }
+        }
+      }, false);
     }
   }]);
 
