@@ -126,10 +126,12 @@ input, textarea {
   background-repeat: no-repeat;
   background-position: center top;
   height: 520px;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 767px) {
@@ -363,18 +365,21 @@ input, textarea {
   height: 1px;
   background: #fff;
   margin-left: -8px;
-  -ms-transform-origin: 50%;
-      transform-origin: 50%;
+  -webkit-transform-origin: 50%;
+      -ms-transform-origin: 50%;
+          transform-origin: 50%;
 }
 
 .modal .modal-close-btn a::before {
-  -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .modal .modal-close-btn a::after {
-  -ms-transform: rotate(-45deg);
-      transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .modal .modal-close-btn2 {
@@ -406,16 +411,19 @@ input, textarea {
     width: 16px;
     height: 1px;
     background: #fff;
-    -ms-transform-origin: 50%;
-        transform-origin: 50%;
+    -webkit-transform-origin: 50%;
+        -ms-transform-origin: 50%;
+            transform-origin: 50%;
   }
   .modal .modal-close-btn2 a::before {
-    -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
   .modal .modal-close-btn2 a::after {
-    -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
 }
 
@@ -436,12 +444,15 @@ input, textarea {
 }
 
 .modal-main-inner {
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   height: 100%;
 }
 
@@ -460,10 +471,12 @@ input, textarea {
 }
 
 .modal-main-heading {
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 34px;
   font-weight: normal;
 }
@@ -479,8 +492,9 @@ input, textarea {
   font-weight: 100;
   font-size: 60px;
   line-height: 1.4;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 @media screen and (max-width: 767px) {
