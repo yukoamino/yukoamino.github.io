@@ -9466,6 +9466,7 @@ var ModalUI = function () {
   function ModalUI() {
     _classCallCheck(this, ModalUI);
 
+    this.$isSp = false;
     this.$sectionText = '.js-section-text';
     this.$sectionTextList = document.querySelectorAll('.js-section-text');
     this.$modalWrap = '.js-modal-wrap';
@@ -9594,10 +9595,14 @@ var ModalUI = function () {
           }
         }
 
-        // SPモーダル複数は閉じる
+        // PC/SP切り替え時はモーダル閉じる
         var windowWidth = window.innerWidth;
+        var isSp = false;
+        if (windowWidth < 768) {
+          isSp = true;
+        }
         var modalOpenList = document.querySelectorAll('.modal.is-open');
-        if (windowWidth < 768 && modalOpenList.length > 1) {
+        if (!(_this2.$isSp === isSp) && modalOpenList.length > 0) {
           for (var i = 0; i < modalOpenList.length; i++) {
             _this2.closeModal(modalOpenList[i]);
           }
@@ -9608,6 +9613,7 @@ var ModalUI = function () {
             _this2.$modalScroll[i].scrollTop = 0;
           }
         }
+        _this2.$isSp = isSp;
       });
     }
   }]);
