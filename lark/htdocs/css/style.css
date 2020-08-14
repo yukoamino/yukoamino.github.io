@@ -124,7 +124,8 @@ input, textarea {
 .section {
   position: relative;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center center;
+  background-size: cover;
   height: 520px;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -138,7 +139,6 @@ input, textarea {
 @media screen and (max-width: 767px) {
   .section {
     height: 100vw;
-    background-size: cover;
   }
 }
 
