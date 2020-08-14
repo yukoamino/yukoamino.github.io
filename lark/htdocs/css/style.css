@@ -132,6 +132,7 @@ input, textarea {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 767px) {
