@@ -9476,6 +9476,7 @@ var ModalUI = function () {
     this.$modalScroll = document.querySelectorAll('.js-modal-scroll');
 
     this.bind();
+    this.setFlag();
     this.checkModal();
   }
 
@@ -9577,6 +9578,14 @@ var ModalUI = function () {
           document.body.classList.remove('is-open');
         }
       });
+    }
+  }, {
+    key: 'setFlag',
+    value: function setFlag() {
+      var windowWidth = window.innerWidth;
+      if (windowWidth < 768) {
+        this.$isSp = true;
+      }
     }
   }, {
     key: 'checkModal',
