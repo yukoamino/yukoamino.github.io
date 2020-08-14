@@ -9530,6 +9530,11 @@ var ModalUI = function () {
         duration: 300,
         display: 'block',
         complete: function complete() {
+          var userAgent = navigator.userAgent.toLowerCase();
+          if (userAgent.indexOf("iphone") !== -1) {
+            document.body.style.top = '-' + window.scrollY + 'px';
+            document.body.style.position = 'fixed';
+          }
           ele.classList.add('is-open');
           document.body.classList.add('is-open');
           var windowHeight = window.innerHeight - 85;
@@ -9560,6 +9565,13 @@ var ModalUI = function () {
         duration: 300,
         display: 'none',
         complete: function complete() {
+          var userAgent = navigator.userAgent.toLowerCase();
+          if (userAgent.indexOf("iphone") !== -1) {
+            var top = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(top || '0') * -1);
+          }
           ele.classList.remove('is-open');
           document.body.classList.remove('is-open');
         }
