@@ -9532,9 +9532,9 @@ var ModalUI = function () {
         complete: function complete() {
           ele.classList.add('is-open');
           document.body.classList.add('is-open');
-          var modalHeight = document.querySelector('.modal.is-open .modal-main-inner').clientHeight;
-          var modalHeight2 = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
-          if (modalHeight < modalHeight2) {
+          var windowHeight = window.innerHeight - 85;
+          var modalHeight = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
+          if (windowHeight < modalHeight) {
             document.querySelector('.modal.is-open').classList.add('is-scroll');
           } else {
             document.querySelector('.modal.is-open').classList.remove('is-scroll');
@@ -9568,20 +9568,35 @@ var ModalUI = function () {
   }, {
     key: 'checkModal',
     value: function checkModal() {
+      var _this2 = this;
+
+      // is-scroll
       window.addEventListener('resize', function () {
-        // console.log('checkModal');
         if (document.querySelector('.modal.is-open .modal-main-inner') !== null) {
-          // console.log('modal');
-          var modalHeight = document.querySelector('.modal.is-open .modal-main-inner').clientHeight;
-          var modalHeight2 = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
-          if (modalHeight < modalHeight2) {
+          var windowHeight = window.innerHeight - 85;
+          var modalHeight = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
+          if (windowHeight < modalHeight) {
             document.querySelector('.modal.is-open').classList.add('is-scroll');
-            // console.log('scroll');
           } else {
             document.querySelector('.modal.is-open').classList.remove('is-scroll');
           }
         }
-      }, false);
+
+        // SPモーダル複数は閉じる
+        var windowWidth = window.innerWidth;
+        var modalOpenList = document.querySelectorAll('.modal.is-open');
+        if (windowWidth < 768 && modalOpenList.length > 1) {
+          for (var i = 0; i < modalOpenList.length; i++) {
+            _this2.closeModal(modalOpenList[i]);
+          }
+          for (var i = 0; i < _this2.$sectionTextList.length; i++) {
+            _this2.show(_this2.$sectionTextList[i]);
+          }
+          for (var i = 0; i < _this2.$modalScroll.length; i++) {
+            _this2.$modalScroll[i].scrollTop = 0;
+          }
+        }
+      });
     }
   }]);
 
