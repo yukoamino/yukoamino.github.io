@@ -9466,7 +9466,6 @@ var ModalUI = function () {
   function ModalUI() {
     _classCallCheck(this, ModalUI);
 
-    this.$isSp = false;
     this.$sectionText = '.js-section-text';
     this.$sectionTextList = document.querySelectorAll('.js-section-text');
     this.$modalWrap = '.js-modal-wrap';
@@ -9474,9 +9473,11 @@ var ModalUI = function () {
     this.$openButton = document.querySelectorAll('.js-modal-open');
     this.$closeButton = document.querySelectorAll('.js-modal-close');
     this.$modalScroll = document.querySelectorAll('.js-modal-scroll');
+    this.$breakPoint = 768; // 768px以上PC表示
+    this.$isSp = false;
 
     this.bind();
-    this.setFlag();
+    this.$isSp = this.getIsSp();
     this.checkModal();
   }
 
@@ -9580,11 +9581,13 @@ var ModalUI = function () {
       });
     }
   }, {
-    key: 'setFlag',
-    value: function setFlag() {
+    key: 'getIsSp',
+    value: function getIsSp() {
       var windowWidth = window.innerWidth;
-      if (windowWidth < 768) {
-        this.$isSp = true;
+      if (windowWidth >= this.$breakPoint) {
+        return false;
+      } else {
+        return true;
       }
     }
   }, {
@@ -9605,25 +9608,32 @@ var ModalUI = function () {
         }
 
         // PC/SP切り替え時はモーダル閉じる
-        var windowWidth = window.innerWidth;
-        var isSp = false;
-        if (windowWidth < 768) {
-          isSp = true;
-        }
         var modalOpenList = document.querySelectorAll('.modal.is-open');
-        if (!(_this2.$isSp === isSp) && modalOpenList.length > 0) {
-          for (var i = 0; i < modalOpenList.length; i++) {
-            _this2.closeModal(modalOpenList[i]);
-          }
-          for (var i = 0; i < _this2.$sectionTextList.length; i++) {
-            _this2.show(_this2.$sectionTextList[i]);
-          }
-          for (var i = 0; i < _this2.$modalScroll.length; i++) {
-            _this2.$modalScroll[i].scrollTop = 0;
-          }
+        if (modalOpenList.length === 0) {
+          _this2.$isSp = _this2.getIsSp();
+          return;
+        }
+        var isSp = _this2.getIsSp();
+        var windowWidth = window.innerWidth;
+        if (isSp !== _this2.$isSp) {
+          _this2.closeModalAll(modalOpenList);
         }
         _this2.$isSp = isSp;
       });
+    }
+  }, {
+    key: 'closeModalAll',
+    value: function closeModalAll(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        arr[i].style.display = 'none';
+        this.closeModal(arr[i]);
+      }
+      for (var i = 0; i < this.$sectionTextList.length; i++) {
+        this.show(this.$sectionTextList[i]);
+      }
+      for (var i = 0; i < this.$modalScroll.length; i++) {
+        this.$modalScroll[i].scrollTop = 0;
+      }
     }
   }]);
 
