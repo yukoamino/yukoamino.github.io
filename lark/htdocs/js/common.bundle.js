@@ -9540,7 +9540,8 @@ var ModalUI = function () {
           }
           ele.classList.add('is-open');
           document.body.classList.add('is-open');
-          var windowHeight = window.innerHeight - 55;
+          // const windowHeight = window.innerHeight - 55;
+          var windowHeight = window.innerHeight;
           var modalHeight = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
           if (windowHeight < modalHeight) {
             document.querySelector('.modal.is-open').classList.add('is-scroll');
@@ -9598,7 +9599,8 @@ var ModalUI = function () {
       // is-scroll
       window.addEventListener('resize', function () {
         if (document.querySelector('.modal.is-open .modal-main-inner') !== null) {
-          var windowHeight = window.innerHeight - 55;
+          // const windowHeight = window.innerHeight - 55;
+          var windowHeight = window.innerHeight;
           var modalHeight = document.querySelector('.modal.is-open .modal-main-inner2').clientHeight;
           if (windowHeight < modalHeight) {
             document.querySelector('.modal.is-open').classList.add('is-scroll');

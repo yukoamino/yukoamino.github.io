@@ -441,10 +441,6 @@ input, textarea {
   .modal-main {
     width: 100%;
   }
-  .modal.is-scroll .modal-main {
-    height: calc(100% - 55px);
-    margin-top: 55px;
-  }
 }
 
 .modal-main-inner {
@@ -463,6 +459,7 @@ input, textarea {
 @media screen and (max-width: 767px) {
   .modal-main-inner {
     padding: 0 4%;
+    position: relative;
   }
   .modal.is-scroll .modal-main-inner {
     display: block;
@@ -472,8 +469,13 @@ input, textarea {
 
 @media screen and (max-width: 767px) {
   .modal-main-inner2 {
+    padding-top: 55px;
+    margin-top: -55px;
     padding-bottom: 50px;
     margin-bottom: -50px;
+  }
+  .modal.is-scroll .modal-main-inner2 {
+    margin-top: 0;
   }
 }
 
