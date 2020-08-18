@@ -444,6 +444,20 @@ input, textarea {
 }
 
 .modal-main-inner {
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-main-inner {
+    padding: 0 4%;
+    position: relative;
+  }
+  .modal.is-scroll .modal-main-inner {
+    overflow-y: scroll;
+  }
+}
+
+.modal-main-contents {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -456,15 +470,8 @@ input, textarea {
   height: 100%;
 }
 
-@media screen and (max-width: 767px) {
-  .modal-main-inner {
-    padding: 0 4%;
-    position: relative;
-  }
-  .modal.is-scroll .modal-main-inner {
-    display: block;
-    overflow-y: scroll;
-  }
+.modal.is-scroll .modal-main-contents {
+  display: block;
 }
 
 @media screen and (max-width: 767px) {
