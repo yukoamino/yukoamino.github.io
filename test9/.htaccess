@@ -1,2 +1,2 @@
 Options +Includes
-AddHandler server-parsed html
+AddType text/x-server-parsed-html .html
