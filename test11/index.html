@@ -40,14 +40,14 @@ header {
   background: beige;
   z-index: 20;
 }
-.m-modal-01-scroll {
+.is-scroll .m-modal-01-content {
   overflow-y: scroll;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 120px);
 }
-.m-modal-01-scroll-inner {
+.is-scroll .m-modal-01-content-inner {
   padding-bottom: 40px;
 }
-.m-modal-01-bottom {
+.is-scroll .m-modal-01-bottom {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -62,9 +62,11 @@ header {
 <p class="js-trigger-01">modal1</p>
 <div class="m-modal-01 js-modal-01">
 <div class="m-modal-01-contents">
-<div class="m-modal-01-contents-item">
 <div class="m-modal-01-top">
 <p style="height: 40px; background: green;" class="js-close">topエリア</p>
+</div>
+<div class="m-modal-01-content">
+<div class="m-modal-01-content-inner">
 <p style="background: #ccc;">
 テキストテキストテキストテキストテキスト<br>
 テキストテキストテキストテキストテキスト<br>
@@ -76,22 +78,23 @@ header {
 テキストテキストテキストテキストテキスト<br>
 テキストテキストテキストテキストテキスト<br>
 </p>
-<p style="height: 40px; background: green;">ボタン</p>
 </div>
+</div>
+<div class="m-modal-01-bottom">
+<p style="height: 40px; background: green;">ボタン</p>
 </div>
 </div>
 </div>
 
 <br>
 <p class="js-trigger-02">modal2</p>
-<div class="m-modal-01 js-modal-02">
+<div class="m-modal-01 is-scroll js-modal-02">
 <div class="m-modal-01-contents">
-<div class="m-modal-01-contents-item">
 <div class="m-modal-01-top">
 <p style="height: 40px; background: green;" class="js-close">スクロールしないエリア</p>
 </div>
-<div class="m-modal-01-scroll">
-<div class="m-modal-01-scroll-inner">
+<div class="m-modal-01-content">
+<div class="m-modal-01-content-inner">
 <p style="background: #ccc;">
 テキストテキストテキストテキストテキスト<br>
 テキストテキストテキストテキストテキスト<br>
@@ -141,7 +144,6 @@ header {
 テキストテキストテキストテキストテキスト<br>
 テキストテキストテキストテキストテキスト<br>
 </p>
-</div>
 </div>
 </div>
 <div class="m-modal-01-bottom">
