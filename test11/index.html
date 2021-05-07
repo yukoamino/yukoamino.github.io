@@ -149,9 +149,11 @@ $(function(){
   });
   $('.js-trigger-02').click(function(){
     $('.js-modal-02').show();
+    $('body').css('position', 'fixed');
   });
   $('.js-close').click(function(){
     $('.js-modal-01, .js-modal-02').hide();
+    $('body').css('position', '');
   });
 });
 </script>
