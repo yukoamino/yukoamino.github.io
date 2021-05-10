@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta name="robots" content="noydir">
+  <meta name="robots" content="noodp">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- <link type="text/css" href="./responsive.css" rel="stylesheet" /> -->
+  <title>test12</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+.m-tgl-01 {
+  border-bottom: 1px solid $gray2;
+}
+.m-tgl-01-list > li {
+  border-bottom: 1px solid #ccc;
+}
+.m-tgl-01-list > li:first-child {
+  border-top: 1px solid #ccc;
+}
+.m-tgl-01-heading {
+  display: flex;
+}
+.m-tgl-01-heading-content {
+  padding: 5px 16px;
+  flex: 1;
+  background: #fff;
+}
+.m-tgl-01-heading-trigger {
+  width: 40px;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.m-tgl-01-heading-trigger-btn {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+}
+.is-active .m-tgl-01-heading-trigger-btn {
+  background: red;
+}
+.m-tgl-01-detail {
+  display: none;
+  border-top: 1px solid #ccc;
+  padding: 10px 16px;
+  background: #fff;
+}
+</style>
+</head>
+<body>
+<div class="m-tgl-01">
+<ul class="m-tgl-01-list">
+<li>
+<div class="m-tgl-01-heading">
+<div class="m-tgl-01-heading-content">
+<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p><a href="#" target="_blank">テキストテキストテキスト</a></p>
+</div>
+<div class="m-tgl-01-heading-trigger is-active">
+<span class="m-tgl-01-heading-trigger-btn"></span>
+</div>
+</div>
+<div class="m-tgl-01-detail">
+<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+</div>
+</li>
+</ul>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$(function(){
+  $('.m-tgl-01-heading').click(function(){
+    $('.m-tgl-01-detail').toggle();
+  });
+});
+</script>
+
+</body>
+</html>
