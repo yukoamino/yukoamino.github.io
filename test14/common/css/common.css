@@ -1,0 +1,622 @@
+@charset "UTF-8";
+/* -----------------
+■ s388
+------------------- */
+/* mixin */
+/* -----------------
+■ main
+------------------- */
+.s388-main {
+  display: block;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* -----------------
+■ ヘッダー
+------------------- */
+.s388-header-pc {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 140px;
+  border-bottom: 1px solid #cecfd1;
+  background-color: #fff;
+  color: #333;
+  font-family: Arial,メイリオ,Meiryo,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.s388-header-pc_top {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 70px;
+  padding: 10px 20px 0 0;
+}
+
+.s388-header-pc_top,.s388-header-pc_top-item1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.s388-header-pc_top-label {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.s388-header-pc_top-number {
+  margin: 0 0 0 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.s388-header-pc_top-number span {
+  font-size: 36px;
+  font-size: 28px;
+}
+
+.s388-header-pc_top-season {
+  width: 134px;
+  width: 120px;
+  margin: 0;
+  background: #d5d5d5;
+  color: #737373;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.s388-header-pc_top-logo {
+  margin: 0 0 0 25px;
+}
+
+.s388-header-pc_top-logo a {
+  display: block;
+  width: 126px;
+  width: 100px;
+  height: 57px;
+  background: url(../image/logo.png) no-repeat 0;
+  background-size: 100%;
+  text-indent: -9999px;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.s388-header-pc_top-logo a:hover {
+  opacity: .6;
+}
+
+.s388-header-pc_top-lead {
+  position: absolute;
+  left: 50%;
+  margin: 0;
+  padding: 0 5px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.s388-header-pc_top-btn-lang a {
+  display: block;
+  width: 122px;
+  height: 44px;
+  background: #ca2420;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.s388-header-pc_top-btn-lang a:hover {
+  background: #ccc;
+}
+
+.s388-header-pc_top-btn-lang a span {
+  color: #fff;
+}
+
+.s388-header-pc_nav {
+  margin-top: 14px;
+}
+
+.s388-header-pc_nav>nav {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.s388-header-pc_nav-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 46px;
+  margin: 0;
+}
+
+.s388-header-pc_nav-parent>li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 56px;
+  list-style: none;
+}
+
+.s388-header-pc_nav-parent>li>a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 46px;
+  padding: 0 5px;
+  border-left: 1px solid #707176;
+  color: #333;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.s388-header-pc_nav-parent>li>a:before {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  width: calc(100% - 4px);
+  height: 4px;
+  margin: auto;
+  background: #333;
+  content: "";
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.s388-header-pc_nav-parent>li.active a:before {
+  opacity: 1;
+}
+
+.s388-header-pc_nav-parent>li:first-child>a {
+  border-left: none;
+}
+
+.s388-header-pc_nav-child {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 140px;
+  left: 0;
+  width: 100%;
+  padding: 40px 0 60px;
+  background: #f6f6f6;
+}
+
+.s388-header-pc_nav-child-inner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.s388-header-pc_nav-child-heading {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  min-height: 36px;
+  padding: 3px 0 0 48px;
+  background: url(../image/icon_arw_bg_red.png) no-repeat 0 0;
+  background-size: 36px;
+  color: #333;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.s388-header-pc_nav-child-heading:hover span {
+  border-bottom: 1px solid #333;
+  color: #333;
+}
+
+.s388-header-pc_nav-child-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.s388-header-pc_nav-child-panel-item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: calc(33.33333% - 20px);
+  margin: 30px 0 0 30px;
+  padding: 10px;
+  border: 1px solid #cdcfd1;
+  border-radius: 10px;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+.s388-header-pc_nav-child-panel-item:nth-child(3n+1) {
+  margin-left: 0;
+}
+
+.s388-header-pc_nav-child-panel-item:first-child,.s388-header-pc_nav-child-panel-item:nth-child(2),.s388-header-pc_nav-child-panel-item:nth-child(3) {
+  margin-top: 0;
+}
+
+.s388-header-pc_nav-child-panel-item:hover .s388-header-pc_nav-child-panel-img img {
+  opacity: .6;
+}
+
+.s388-header-pc_nav-child-panel-item:hover .s388-header-pc_nav-child-panel-txt span {
+  border-bottom: 1px solid #333;
+  color: #333;
+}
+
+.s388-header-pc_nav-child-panel-img {
+  border-radius: 10px;
+  background: #000;
+  line-height: 1;
+}
+
+.s388-header-pc_nav-child-panel-img img {
+  max-width: 100%;
+  height: auto;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.s388-header-pc_nav-child-panel-txt {
+  min-height: 25px;
+  margin: 10px 0 0;
+  padding: 3px 0 0 32px;
+  background: url(../image/icon_arw_bg_red.png) no-repeat 0 0;
+  background-size: 25px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.s388-header-pc_nav-child-panel-txt,.s388-header-sp {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.s388-header-sp {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding-right: 15px;
+  border-bottom: 1px solid #cecfd1;
+  background: #fff;
+  color: #333;
+  font-family: Arial,メイリオ,Meiryo,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.s388-header-sp.absolute {
+  position: absolute;
+}
+
+.s388-header-sp_number {
+  margin: 0 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.s388-header-sp_number span {
+  font-size: 24px;
+}
+
+.s388-header-sp_season {
+  width: 90px;
+  margin: 0;
+  background: #d5d5d5;
+  color: #737373;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+.s388-header-sp_logo {
+  margin: 0;
+}
+
+.s388-header-sp_logo a {
+  display: block;
+  width: 70px;
+  height: 32px;
+  background: url(../image/logo.png) no-repeat 0 0;
+  background-size: 100%;
+  text-indent: -9999px;
+}
+
+.s388-header-sp_item1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.s388-header-sp_btn-lang a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #ca2420;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.s388-header-sp_btn-lang a span {
+  color: #fff;
+}
+
+.s388-header-sp_btn-menu {
+  width: 31px;
+  height: 31px;
+  margin-left: 14px;
+  border: none;
+  outline: none;
+  background: url(../image/btn_menu.png) no-repeat 50%;
+  background-size: 100%;
+}
+
+.s388-header-sp_btn-menu.close {
+  background-image: url(../image/btn_menu_close.png);
+}
+
+.s388-header-sp_menu {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  top: 49px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  color: #333;
+  font-family: Arial,メイリオ,Meiryo,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.s388-header-sp_menu-list {
+  margin: 0;
+}
+
+.s388-header-sp_menu-list>dt>a,.s388-header-sp_menu-list>dt>span {
+  display: block;
+  position: relative;
+  padding: 6px 20px;
+  border-bottom: 1px solid #5c5c5c;
+  background: #464646;
+  color: #fff;
+  font-size: 16px;
+}
+
+.s388-header-sp_menu-list>dt>a:after,.s388-header-sp_menu-list>dt>span:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 6.5px;
+  height: 10.5px;
+  margin: auto;
+  background: url(../image/icon_arw_right_white.png) 0 0;
+  background-size: 100%;
+  content: "";
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+}
+
+.s388-header-sp_menu-list>dt>a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.s388-header-sp_menu-list>dt>span:after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.s388-header-sp_menu-list>dt.active>span:after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.s388-header-sp_menu-list>dd {
+  display: none;
+  margin: 0;
+}
+
+.s388-header-sp_menu-list-child {
+  margin: 0;
+  padding: 4px 0;
+  background: #000;
+}
+
+.s388-header-sp_menu-list-child>li {
+  margin-left: 40px;
+  padding: 4px 20px 4px 0;
+}
+
+.s388-header-sp_menu-list-child>li:first-child {
+  margin-left: 20px;
+}
+
+.s388-header-sp_menu-list-child>li>a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* -----------------
+■ s388-btn-pagetop
+------------------- */
+.s388-btn-pagetop {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 110px;
+  height: 80px;
+}
+
+.s388-btn-pagetop_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  background: url(../image/btn_pagetop.png) no-repeat 0 0;
+  background-size: 100%;
+  text-indent: -9999px;
+}
+
+/* -----------------
+■ フッター
+------------------- */
+.s388-footer {
+  position: relative;
+  padding: 22px 0;
+  background-color: #474747;
+  color: #333;
+  font-family: Arial,メイリオ,Meiryo,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.s388-footer_logo {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 114px;
+  height: 40px;
+  background: url(../image/footer_logo.svg) no-repeat 0 0;
+  background-size: 100%;
+  text-indent: -9999px;
+}
+
+.s388-footer p {
+  width: 60%;
+  margin: 10px auto 0;
+  color: #fff;
+  font-size: 12px;
+  line-height: 21px;
+}
+
+.s388-footer p .pc-hide {
+  display: none;
+}
+
+@media screen and (max-width:899px) {
+  .s388-main {
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+  .s388-header-pc {
+    display: none;
+  }
+  .s388-header-sp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .s388-btn-pagetop {
+    width: 50px;
+    height: 45px;
+  }
+  .s388-btn-pagetop_btn {
+    width: 35px;
+    height: 35px;
+  }
+  .s388-footer {
+    height: 80px;
+    padding: 0;
+  }
+  .s388-footer_logo {
+    top: 16px;
+    right: 20px;
+    width: 88px;
+  }
+  .s388-footer p {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 225px;
+    margin-top: 0;
+    font-size: 8px;
+    line-height: 14px;
+    text-align: left;
+  }
+  .s388-footer p .pc-hide {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .s388-header-pc_top-logo {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .s388-header-pc_nav-child-inner {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width:900px) {
+  .s388-header-sp_menu {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width:374px) {
+  .s388-footer_logo {
+    width: 60px;
+  }
+}

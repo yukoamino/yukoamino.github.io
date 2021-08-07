@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/* mixin */
+/* common */
+.c-pc-hide {
+  display: none;
+}
+
+.c-sp-hide {
+  display: inline-block;
+}
+
+/* main */
+.s388-main {
+  padding-bottom: 90px;
+  height: 700px;
+}
+
+/* contents */
+.main-link {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 30px;
+  font-family: Arial,メイリオ,Meiryo,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,Osaka,ＭＳ Ｐゴシック,MS PGothic,sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.main-link_item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 3.4%;
+}
+
+.main-link_item:first-child {
+  margin-left: 0;
+}
+
+.main-link_link-container {
+  background: #000;
+}
+
+.main-link_link {
+  display: block;
+  position: relative;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.main-link_link:hover {
+  opacity: .6;
+}
+
+.main-link_img {
+  position: relative;
+}
+
+.main-link_img img {
+  width: 100%;
+}
+
+.main-link_label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 34px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: center;
+}
+
+.main-link_link1 .main-link_label {
+  background: #8f3336;
+}
+
+.main-link_link2 .main-link_label {
+  background: #00677a;
+}
+
+.main-link_txt {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.main-link_link1 .main-link_txt {
+  top: 41%;
+}
+
+.main-link_link2 .main-link_txt {
+  top: 23%;
+  padding: 0 12%;
+}
+
+.main-link_txt-inner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 0 2%;
+  color: #fff;
+  text-align: center;
+}
+
+.main-link_link1 .main-link_txt-inner {
+  padding-top: 6%;
+  padding-bottom: 6%;
+  background: rgba(143, 51, 54, .5);
+}
+
+.main-link_link2 .main-link_txt-inner {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background: rgba(0, 103, 122, .5);
+}
+
+.main-link_txt-inner2 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  background: rgba(0, 0, 0, .3);
+}
+
+.main-link_txt1 {
+  font-size: 26px;
+}
+
+.main-link_txt2 {
+  margin-top: 2%;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.19048;
+}
+
+.main-link_txt3 {
+  margin-top: 1%;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.main-link_bnr-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-link_bnr {
+  display: block;
+  width: 48.3%;
+  margin: 3.4% 0 0 3.4%;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.main-link_bnr:nth-child(odd) {
+  margin-left: 0;
+}
+
+.main-link_bnr:hover {
+  opacity: .6;
+}
+
+.main-link_bnr img {
+  width: 100%;
+}
+
+@media screen and (max-width:767px) {
+  .c-pc-hide {
+    display: inline-block;
+  }
+  .c-sp-hide {
+    display: none;
+  }
+  .main-link {
+    display: block;
+    max-width: 100%;
+    padding: 10px 10px 0;
+  }
+  .main-link_item {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .main-link_item:first-child {
+    margin-top: 0;
+  }
+  .main-link_label {
+    width: 33.33333vw !important;
+    height: 4.53333vw !important;
+    font-size: 2.66667vw !important;
+    line-height: 4.53333vw !important;
+  }
+  .main-link_txt {
+    padding: 0 12.66667vw;
+  }
+  .main-link_link1 .main-link_txt {
+    top: 20vw;
+  }
+  .main-link_link2 .main-link_txt {
+    top: 12.66667vw;
+    padding: 0 12.66667vw;
+  }
+  .main-link_link1 .main-link_txt-inner,.main-link_link2 .main-link_txt-inner {
+    padding-top: 5.33333vw;
+    padding-bottom: 5.33333vw;
+  }
+  .main-link_txt-inner2 {
+    padding: 0;
+  }
+  .main-link_txt1 {
+    font-size: 3.73333vw !important;
+  }
+  .main-link_txt2 {
+    font-size: 6.13333vw !important;
+  }
+  .main-link_txt3 {
+    font-size: 3.73333vw !important;
+  }
+}
+
+@media screen and (max-width:899px) {
+  .s388-main {
+    padding-bottom: 55px;
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .main-link {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .main-link_label {
+    width: 20.83333vw;
+    height: 2.83333vw;
+    font-size: 1.66667vw;
+    line-height: 2.83333vw;
+  }
+  .main-link_txt1 {
+    font-size: 2.16667vw;
+  }
+  .main-link_txt2 {
+    font-size: 3.5vw;
+  }
+  .main-link_txt3 {
+    font-size: 2.33333vw;
+  }
+}
