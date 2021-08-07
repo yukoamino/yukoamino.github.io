@@ -558,7 +558,7 @@
     padding-bottom: 10px;
   }
   .s388-header-pc {
-    display: none;
+    /* display: none; */
   }
   .s388-header-sp {
     display: -webkit-box;
