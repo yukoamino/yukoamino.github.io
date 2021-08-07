@@ -43,11 +43,13 @@ $(function(){
 		});
 	} else {
 		// tab
+		// 親ナビの遷移制御
 		$('.js-menu-list > li > a').on('click',function(){
 			if($(this).parent().hasClass('nolink')) {
 				return false;
 			}
 		});
+		// メニュー開く
 		$(".js-menu-list > li").on("touchstart", function () {
 			if(menu !== null && !$(this).hasClass('active')){
 				menu.find(".js-menu-panel").hide();
@@ -61,7 +63,19 @@ $(function(){
 				menu.removeClass("nolink");
 			}, 500);
 		});
+		// メニュー閉じる（ヘッダー以外触ったら）
+		var moveFlg = false;
 		$(".s388-main, .s388-header-pc_top").on('touchstart', function() {
+			moveFlg = false;
+		});
+		$(".s388-main, .s388-header-pc_top").on('touchmove', function() {
+			moveFlg = true;
+		});
+		$(".s388-main, .s388-header-pc_top").on('touchend', function() {
+			if (moveFlg) {
+				// 移動中は閉じない
+				return;
+			}
 			$(".js-menu-list > li").removeClass('active');
 			$(".js-menu-list > li.js-menu-list-sub").addClass('nolink');
 			$(".js-menu-list > li").find(".js-menu-panel").fadeOut(200);
