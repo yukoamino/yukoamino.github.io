@@ -115,7 +115,6 @@ $(window).on("scroll", function() {
 	}
 	clearTimeout(scrollTimer);
 	scrollTimer = setTimeout(function(){
-		console.log('event');
 		scrollTop = $(window).scrollTop();
 		if (scrollTop <= 140 ) {
 			$('.js-header-pc').fadeIn();
