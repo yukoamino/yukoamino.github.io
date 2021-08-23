@@ -114,7 +114,7 @@ $(window).on("scroll", function() {
 		return;
 	}
 	clearTimeout(scrollTimer);
-	scrollTimer = setTimeout(function(){
+	// scrollTimer = setTimeout(function(){
 		scrollTop = $(window).scrollTop();
 		if (scrollTop <= 140 ) {
 			$('.js-header-pc').fadeIn();
@@ -131,7 +131,7 @@ $(window).on("scroll", function() {
 			}
 		}
 		startPos = scrollTop;
-	}, 300);
+	// }, 300);
 });
 
 $(window).on("resize", function() {
