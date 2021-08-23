@@ -113,10 +113,18 @@ $(window).on("scroll", function() {
 		$('.js-header-pc').hide();
 		return;
 	}
+	scrollTop = $(window).scrollTop();
+	if (scrollTop <= 140) {
+		if ($('.js-header-pc').is(':visible')) {
+		} else {
+			$('.js-header-pc').fadeIn();
+		}
+		return;
+	}
 	clearTimeout(scrollTimer);
 	scrollTimer = setTimeout(function(){
 		scrollTop = $(window).scrollTop();
-		if (scrollTop <= 140 ) {
+		if (scrollTop <= 140) {
 			$('.js-header-pc').fadeIn();
 		} else {
 			if (scrollTop > startPos) {
