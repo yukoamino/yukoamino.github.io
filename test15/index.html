@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      // progressbar
+      $('.progressbar').progressbar({
+        max: 100,
+        value: 50,
+      });
+      $('.progressbar-btn').click(function(){
+        $('.progressbar').progressbar('value', parseInt($('.progressbar-text').val()));
+      });
+
+      // menu
+      $('.menu').menu({
+        position: {my: 'left top', at: 'right-10 top-2'},
+      });
+
+      // button
+      $('input[type=submit]').button({
+        classes: { 'ui-button': 'ui-corner-br' }
+      });
+      $('button').button({
+        // disabled: true,
+      });
+      $('.button').button();
+
+      // accordion
+      $('#accordion').accordion({
+        collapsible: true,
+        heightStyle: 'content',
+      });
+      // .sortable();
+    });
+  </script>
+  <style>
+    .ui-menu {
+      width: 250px;
+    }
+    .menu a {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>jQuery UI</h1>
+
+  <h2>Progressbar</h2>
+  <div>
+    <div class="progressbar"></div>
+    <input type="text" class="progressbar-text">
+    <button class="progressbar-btn">Change</button>
+  </div>
+
+  <h2>Menu</h2>
+  <div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">About</a>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Our Staff</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Clients</a></li>
+      <li class="ui-state-disabled"><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+
+
+  <h2>Button</h2>
+  <div>
+    <input type="submit" value="submitボタン">
+    <button>buttonボタン</button>
+    <a href="#" class="button">リンク</a>
+  </div>
+
+
+  <h2>Accordion</h2>
+  <div id="accordion">
+    <h3>section 1</h3>
+    <div>
+      <p>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
+    </div>
+    <h3>section 2</h3>
+    <div>
+      <p>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
+      <ul>
+        <li>リスト</li>
+        <li>リストリストリストリストリストリストリストリストリストリスト</li>
+        <li>リスト</li>
+      </ul>
+    </div>
+    <h3>section 3</h3>
+    <div>
+      <p>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
+    </div>
+    <h3>section 4</h3>
+    <div>
+      <p>テキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
+    </div>
+  </div>
+</body>
+</html>
