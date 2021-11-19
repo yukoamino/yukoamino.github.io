@@ -179,3 +179,33 @@
 #filters .blur {
   filter: blur(5px);
 }
+
+#masking {
+  margin-top: 50px;
+}
+#masking .img {
+  width: 300px;
+}
+#masking .img1 {
+  -webkit-mask-image: url(img.png);
+}
+#masking .img2 {
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+#blending {
+  margin-top: 50px;
+  background-color: blueviolet;
+}
+#blending .img {
+  width: 300px;
+  mix-blend-mode: multiply;  
+}
+#blending2 {
+  margin-top: 50px;
+  width: 300px;
+  height: 300px;
+  background: url(./img.png) blueviolet no-repeat center center;
+  background-size: 100%;
+  background-blend-mode: overlay;
+}
