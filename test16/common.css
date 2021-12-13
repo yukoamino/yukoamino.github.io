@@ -209,3 +209,13 @@
   background-size: 100%;
   background-blend-mode: overlay;
 }
+
+#resize {
+  margin: 50px 0;
+  border: 2px solid red;
+  padding: 20px;
+  width: 250px;
+  /* min-width: 250px; */
+  overflow: auto;
+  resize: both;
+}
