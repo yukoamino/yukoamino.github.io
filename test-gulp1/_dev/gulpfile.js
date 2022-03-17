@@ -29,18 +29,20 @@ gulp.task('pug-prod', () => {
   const json = JSON.parse(fs.readFileSync(jsonPath));
 
   for (let key of json) {
-    gulp.src(key.template)
-      // .pipe(rename(key.no + ".html"))
-      .pipe(data (function (file){
-        return {
-          'fileName': file.path.split('/').pop().replace('.html', ''),
-          'planList': json
-        }
-      }))
-      .pipe(pug({
-        pretty: true
-      }))
-      .pipe(gulp.dest('../' + key.directory + '/'));
+    for (let index in key.templateFilename) {
+      gulp.src(key.templateDirectory + key.templateFilename[index])
+        // .pipe(rename(key.no + ".html"))
+        .pipe(data (function (file){
+          return {
+            'fileName': file.path.split('/').pop().replace('.html', ''),
+            'planList': json
+          }
+        }))
+        .pipe(pug({
+          pretty: true
+        }))
+        .pipe(gulp.dest('../' + key.directory + '/'));
+    }
   }
 });
 
