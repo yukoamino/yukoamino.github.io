@@ -13,7 +13,7 @@ var jsonPath = './pug/pug-prod.json';
 gulp.task('pug', function (){
   gulp
     .src([
-      './pug/**/*.pug', '!./pug/_**/*.pug'
+      './pug/**/*.pug', '!./pug/_**/*.pug', '!./pug/**/_*.pug'
     ])
     .pipe(plumber({ errorHandler: notify.onError("pug Error\n <%= error.message %>") }))
     .pipe(pug({pretty: util.env.d ? true : true}))
@@ -44,7 +44,7 @@ gulp.task('pug-prod', () => {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['./pug/**/*.pug', '!./pug/_**/*.pug'], ['pug']);
+  gulp.watch(['./pug/**/*.pug', '!./pug/_**/*.pug', '!./pug/**/_*.pug'], ['pug']);
 });
 
 gulp.task('watch-prod', function () {
