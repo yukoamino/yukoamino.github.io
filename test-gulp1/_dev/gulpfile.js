@@ -5,10 +5,8 @@ var notify          = require("gulp-notify");
 var pug             = require('gulp-pug');
 
 var fs             = require('fs');
-const data   = require('gulp-data');
-// const rename = require('gulp-rename');
+var data           = require('gulp-data');
 
-// var template = './pug/card/test.pug';
 var jsonPath = './pug/pug-prod.json';
 
 /*--------------------------------------------------------*/
@@ -31,7 +29,6 @@ gulp.task('pug-prod', () => {
   for (let key of json) {
     for (let index in key.templateFilename) {
       gulp.src(key.templateDirectory + key.templateFilename[index])
-        // .pipe(rename(key.no + ".html"))
         .pipe(data (function (file){
           return {
             'fileName': file.path.split('/').pop().replace('.html', ''),
