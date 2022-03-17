@@ -2,7 +2,7 @@
   {
     "no": 1,
     "directory": "card_01",
-    "templateDirectory": "./pug/card/",
+    "templateDirectory": "./pug/_card/",
     "templateFilename": ["test.pug","test02.pug"],
     "title": "北海道旅行",
     "text": "札幌、小樽、旭川のツアーはこちら"
@@ -10,7 +10,7 @@
   {
     "no": 2,
     "directory": "card_02",
-    "templateDirectory": "./pug/card/",
+    "templateDirectory": "./pug/_card/",
     "templateFilename": ["test.pug","test02.pug"],
     "title": "東北旅行",
     "text": "青森、秋田、岩手のツアーはこちら"
