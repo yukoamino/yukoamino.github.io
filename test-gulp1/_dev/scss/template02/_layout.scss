@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+@import 'config';
+@import 'mixin';
+
+// ===================================================================
+// font
+// ===================================================================
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+// ===================================================================
+// body
+// ===================================================================
+body {
+  &.is-noscroll {
+    overflow-y: hidden;
+  }
+  position: relative;
+  overflow-x: hidden;
+}
+
+// ===================================================================
+// main
+// ===================================================================
+html {
+  min-height: calc(100vh - 128 / 750 * 100vw);
+}
+.main {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  padding: 0;
+  background-color: transparent;
+}
+.header {
+  position: relative;
+}
