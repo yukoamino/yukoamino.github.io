@@ -20,9 +20,6 @@ gulp.task('pug', function (){
     .pipe(gulp.dest('../'));
 });
 
-/**************************************************
- * task
- *************************************************/
 gulp.task('pug-prod', () => {
   const json = JSON.parse(fs.readFileSync(jsonPath));
 
