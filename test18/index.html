@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="">
+  <title>test</title>
+  <!-- <link rel="stylesheet" href="common.css"> -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper {
+      padding: 20px;
+    }
+    .dl-list dt {
+      margin-top: 20px;
+    }
+    .input-item input {
+      width: 100%;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <dl class="dl-list">
+      <dt>type="email"</dt>
+      <dd><div class="input-item"><input type="email"></div></dd>
+
+      <dt>type="email", <br>pattern="^[0-9A-Za-z]+$" 英数字</dt>
+      <dd><div class="input-item"><input type="email" pattern="^[0-9A-Za-z]+$"></div></dd>
+
+      <dt>inputmode="email"</dt>
+      <dd><div class="input-item"><input inputmode="email"></div></dd>
+
+      <dt>inputmode="url"</dt>
+      <dd><div class="input-item"><input inputmode="url"></div></dd>
+
+      <dt>type="email", <br>inputmode="email"</dt>
+      <dd><div class="input-item"><input type="email" inputmode="email"></div></dd>
+
+      <dt>type="url", <br>inputmode="url"</dt>
+      <dd><div class="input-item"><input type="url" inputmode="url"></div></dd>
+    </dl>
+  </div>
+</body>
+</html>
