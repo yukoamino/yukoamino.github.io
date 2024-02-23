@@ -116,12 +116,13 @@ $(function(){
   });
   // モーダル2
   $('#modal-open2').click(function(e){
-    $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'false');
+    $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'false').focus();
     $('#modal-overlay2').toggleClass('is-active');
   });
   $('#modal-close2').click(function(e){
     $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'true');
     $('#modal-overlay2').toggleClass('is-active');
+    $('#modal-open2').focus();
   });
 
 });
