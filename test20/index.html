@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="">
   <title>test</title>
   <!-- <link rel="stylesheet" href="common.css"> -->
-  <style>
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -47,6 +47,9 @@
 }
 
 .modal-box {
+  margin-bottom: 20px;
+}
+.modal-link {
   margin-bottom: 20px;
 }
 .modal-link button {
@@ -94,7 +97,7 @@
 .modal-heading {
   margin-bottom: 10px;
 }
-  </style>
+</style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
@@ -169,23 +172,7 @@ $(function(){
     </div>
 
     <!-- モーダル2 -->
-    <div class="modal-box">
-      <p class="modal-link"><button id="modal-open2" aria-controls="modal-wrap2" aria-haspopup="dialog">モーダル開く</button>　<span>aria-modal</span></p>
-      <div class="modal-overlay" id="modal-overlay2"></div>
-      <div class="modal-wrap" id="modal-wrap2" role="dialog" aria-modal="true" aria-hidden="true" tabindex="0">
-        <div class="modal-contents">
-          <p id="modal-heading" tabindex="0">モーダル2タイトル</p>
-          <ul class="modal-list">
-            <li><a href="#">日本語</a></li>
-            <li><a href="#">英語</a></li>
-            <li><a href="#">中国語</a></li>
-            <li><a href="#">韓国語</a></li>
-          </ul>
-          <button id="modal-close2" class="modal-close">閉じる</button>
-        </div>
-      </div>
-    </div>
-
+    <p class="modal-link"><button id="modal-open2" aria-controls="modal-wrap2" aria-haspopup="dialog">モーダル開く</button>　<span>aria-modal</span></p>
 
     <div class="img">img</div>
     <section class="section">
@@ -200,6 +187,22 @@ $(function(){
       <h2 id="anc4" tabindex="0">見出し4</h2>
       <p class="text1">４のテキストが入ります入ります</p>
     </section>
+  </div>
+
+  <!-- モーダル2 -->
+  <div class="modal-box">
+    <div class="modal-overlay" id="modal-overlay2"></div>
+    <div class="modal-wrap" id="modal-wrap2" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-contents">
+        <button id="modal-close2" class="modal-close">閉じる</button>
+        <ul class="modal-list">
+          <li><a href="#">日本語</a></li>
+          <li><a href="#">英語</a></li>
+          <li><a href="#">中国語</a></li>
+          <li><a href="#">韓国語</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>
