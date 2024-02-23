@@ -105,7 +105,7 @@ $(function(){
     $('#anc4').focus();
   });
 
-  // モーダル
+  // モーダル1
   $('#modal-open1').click(function(e){
     $('#modal-wrap1').toggleClass('is-active');
     $('#modal-overlay1').toggleClass('is-active');
@@ -113,6 +113,15 @@ $(function(){
   $('#modal-close1').click(function(e){
     $('#modal-wrap1').toggleClass('is-active');
     $('#modal-overlay1').toggleClass('is-active');
+  });
+  // モーダル2
+  $('#modal-open2').click(function(e){
+    $('#modal-wrap2').toggleClass('is-active');
+    $('#modal-overlay2').toggleClass('is-active');
+  });
+  $('#modal-close2').click(function(e){
+    $('#modal-wrap2').toggleClass('is-active');
+    $('#modal-overlay2').toggleClass('is-active');
   });
 
 });
@@ -152,6 +161,23 @@ $(function(){
         </div>
       </div>
     </div>
+
+    <div class="modal-box">
+      <p class="modal-link"><button id="modal-open2">モーダル開く</button>　<span>aria-modal</span></p>
+      <div class="modal-overlay" id="modal-overlay2"></div>
+      <div class="modal-wrap" id="modal-wrap2" aria-modal="true">
+        <div class="modal-contents">
+          <ul class="modal-list">
+            <li><a href="#">日本語</a></li>
+            <li><a href="#">英語</a></li>
+            <li><a href="#">中国語</a></li>
+            <li><a href="#">韓国語</a></li>
+          </ul>
+          <button id="modal-close2" class="modal-close">閉じる</button>
+        </div>
+      </div>
+    </div>
+
 
     <div class="img">img</div>
     <section class="section">
