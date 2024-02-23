@@ -122,21 +122,23 @@ $(function(){
   });
   // モーダル2
   $('#modal-open2').click(function(e){
-    $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'false')
+    $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'false');
     $('#modal-overlay2').toggleClass('is-active');
     $('#modal-close2').focus();
+    $('#wrapper').attr('aria-hidden', 'true');
   });
   $('#modal-close2').click(function(e){
     $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'true');
     $('#modal-overlay2').toggleClass('is-active');
     $('#modal-open2').focus();
+    $('#wrapper').attr('aria-hidden', 'false');
   });
 
 });
 </script>
 </head>
 <body>
-  <div class="wrapper">
+  <div id="wrapper" class="wrapper" aria-hidden="false">
     <h1>TEST</h1>
     <ul class="link-list">
       <li>
