@@ -122,13 +122,15 @@ $(function(){
   });
   // モーダル2
   $('#modal-open2').click(function(e){
-    $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'false');
+    $('#modal-wrap2').toggleClass('is-active');
+    //$('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'false');
     $('#modal-overlay2').toggleClass('is-active');
     $('#modal-close2').focus();
     $('#wrapper').attr('aria-hidden', 'true');
   });
   $('#modal-close2').click(function(e){
-    $('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'true');
+    $('#modal-wrap2').toggleClass('is-active');
+    //$('#modal-wrap2').toggleClass('is-active').attr('aria-hidden', 'true');
     $('#modal-overlay2').toggleClass('is-active');
     $('#modal-open2').focus();
     $('#wrapper').attr('aria-hidden', 'false');
@@ -194,7 +196,7 @@ $(function(){
   <!-- モーダル2 -->
   <div class="modal-box">
     <div class="modal-overlay" id="modal-overlay2"></div>
-    <div class="modal-wrap" id="modal-wrap2" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-wrap" id="modal-wrap2" role="dialog" aria-modal="true">
       <div class="modal-contents">
         <button id="modal-close2" class="modal-close">閉じる</button>
         <ul class="modal-list">
