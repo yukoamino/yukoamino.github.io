@@ -13,6 +13,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   background: #cccccc;
@@ -46,6 +47,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 24px 0;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 24px);
 }
 .p-copyright_text {
   margin: 0 118px;
