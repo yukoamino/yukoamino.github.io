@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="">
+  <title>test</title>
+  <!-- <link rel="stylesheet" href="common.css"> -->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #cccccc;
+  /* padding-bottom: env(safe-area-inset-bottom); */
+}
+.p-lottery {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+.p-lottery_inr {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.p-lottery_main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 20px 0 0;
+  background: url(../img/lottery_bg.png) lightgray -244.226px 0px/230.254% 154.899% no-repeat;
+}
+.p-copyright {
+  width: min(100%, 500px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 0;
+}
+.p-copyright_text {
+  margin: 0 118px;
+}
+</style>
+
+<script>
+$(function(){
+});
+</script>
+</head>
+<body>
+  <section class="p-lottery">
+    <div class="p-lottery_inr">
+      <div class="p-lottery_main">
+      </div>
+      <div class="p-copyright">
+        <p class="p-copyright_text"><img src="./c.png" alt=""></p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
